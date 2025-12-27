@@ -808,17 +808,11 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
         SetMapVarsToTrainer();
         return EventScript_TryDoDoubleTrainerBattle;
     case TRAINER_BATTLE_REMATCH_DOUBLE:
-#if ENGLISH
-        QL_FinishRecordingScene();
-#endif
         TrainerBattleLoadArgs(sDoubleBattleParams, data);
         SetMapVarsToTrainer();
         gTrainerBattleOpponent_A = GetRematchTrainerId(gTrainerBattleOpponent_A);
         return EventScript_TryDoDoubleRematchBattle;
     case TRAINER_BATTLE_REMATCH:
-#if ENGLISH
-        QL_FinishRecordingScene();
-#endif
         TrainerBattleLoadArgs(sOrdinaryBattleParams, data);
         SetMapVarsToTrainer();
         gTrainerBattleOpponent_A = GetRematchTrainerId(gTrainerBattleOpponent_A);

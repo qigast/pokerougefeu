@@ -501,15 +501,9 @@ static const struct WindowTemplate sUIWindowTemplates[] = {
     },
     [FCWINDOWID_ICONDESC] = {
         .bg = 0,
-#if GAME_LANGUAGE == LANGUAGE_ITALIAN || GAME_LANGUAGE == LANGUAGE_FRENCH
         .tilemapLeft = 13,
         .tilemapTop = 10,
         .width = 15,
-#else
-        .tilemapLeft = 15,
-        .tilemapTop = 10,
-        .width = 11,
-#endif
         .height = 4,
         .paletteNum = 15,
         .baseBlock = 20 + 8 * 10 + 24 * 2 + 26 * 4
@@ -732,11 +726,7 @@ static void Task_WaitFadeOnInit(u8 taskId)
         gTasks[taskId].func = Task_TopMenuHandleInput;
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ITALIAN || GAME_LANGUAGE == LANGUAGE_FRENCH
-    #define WINDOW_WITDH 120
-#else
-    #define WINDOW_WITDH 88
-#endif
+#define WINDOW_WITDH 120
 
 static void Task_TopMenuHandleInput(u8 taskId)
 {
@@ -1680,7 +1670,6 @@ static void Task_FCOpenOrCloseInfoBox(u8 taskId)
     }
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ITALIAN || GAME_LANGUAGE == LANGUAGE_FRENCH
 static void UpdateInfoBoxTilemap(u8 bg, s16 state)
 {
     if (state == 0 || state == 3)
@@ -1742,69 +1731,6 @@ static void UpdateInfoBoxTilemap(u8 bg, s16 state)
     }
     CopyBgTilemapBufferToVram(bg);
 }
-#else
-static void UpdateInfoBoxTilemap(u8 bg, s16 state)
-{
-    if (state == 0 || state == 3)
-    {
-        FillBgTilemapBufferRect(bg, 0x8C, 14, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0xA1, 15, 10, 10,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x8D, 25, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x8E, 26, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x8F, 14, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x00, 15, 11, 11,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x90, 26, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x91, 14, 12,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0xA3, 15, 12, 10,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x92, 25, 12,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x93, 26, 12,  1,  1, 1);
-    }
-    else if (state == 1)
-    {
-        FillBgTilemapBufferRect(bg, 0x9B, 14, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x9C, 15, 10, 11,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x96, 26, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x9D, 14, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x00, 15, 11, 11,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x90, 26, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x9E, 14, 12,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x9F, 15, 12, 11,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x99, 26, 12,  1,  1, 1);
-    }
-    else if (state == 2)
-    {
-        FillBgTilemapBufferRect(bg, 0x94, 14, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x95, 15, 10, 11,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x96, 26, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x8F, 14, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x9A, 15, 11, 11,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x90, 26, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x97, 14, 12,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x98, 15, 12, 11,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x99, 26, 12,  1,  1, 1);
-    }
-    else if (state == 4)
-    {
-        FillBgTilemapBufferRect(bg, 0x83, 14, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0xA0, 15, 10, 10,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x84, 25, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x85, 26, 10,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x86, 14, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0xA2, 15, 11, 10,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x87, 25, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x88, 26, 11,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x83, 14, 12,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0xA0, 15, 12, 10,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x84, 25, 12,  1,  1, 1);
-        FillBgTilemapBufferRect(bg, 0x85, 26, 12,  1,  1, 1);
-    }
-    else if (state == 5)
-    {
-        FillBgTilemapBufferRect(bg, 0x00, 14, 10, 13,  3, 1);
-    }
-    CopyBgTilemapBufferToVram(bg);
-}
-#endif
 
 static void PlaceListMenuCursor(bool8 isActive)
 {

@@ -96,11 +96,7 @@ static void Task_NormalContextMenu(u8 taskId);
 static void Task_NormalContextMenu_HandleInput(u8 taskId);
 static void Task_BerryPouch_Use(u8 taskId);
 static void Task_BerryPouch_Toss(u8 taskId);
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static void Task_AskTossMultiple(u8 taskId);
-#else
 static void Task_AskTossMultiple(u16 itemId, u8 taskId);
-#endif
 static void Task_TossNo(u8 taskId);
 static void Task_Toss_SelectMultiple(u8 taskId);
 static void Task_TossYes(u8 taskId);
@@ -1095,11 +1091,7 @@ static void Task_BerryPouch_Toss(u8 taskId)
     PutWindowTilemap(0);
     data[8] = 1;
     if (data[2] == 1)
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-        Task_AskTossMultiple(taskId);
-#else
         Task_AskTossMultiple(data[1], taskId);
-#endif
     else
     {
         InitTossQuantitySelectUI(taskId, gText_TossOutHowManyStrVar1s);
@@ -1108,16 +1100,6 @@ static void Task_BerryPouch_Toss(u8 taskId)
     }
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static void Task_AskTossMultiple(u8 taskId)
-{
-    s16 * data = gTasks[taskId].data;
-    ConvertIntToDecimalStringN(gStringVar2, data[8], STR_CONV_MODE_LEFT_ALIGN, 3);
-    StringExpandPlaceholders(gStringVar4, gText_ThrowAwayStrVar2OfThisItemQM);
-    BerryPouchPrint(GetOrCreateVariableWindow(7), FONT_NORMAL, gStringVar4, 0, 2, 1, 2, 0, 1);
-    CreateYesNoMenuWin3(taskId, &sYesNoFuncs_Toss);
-}
-#else
 static void Task_AskTossMultiple(u16 itemId, u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
@@ -1127,7 +1109,6 @@ static void Task_AskTossMultiple(u16 itemId, u8 taskId)
     BerryPouchPrint(GetOrCreateVariableWindow(7), FONT_NORMAL, gStringVar4, 0, 2, 1, 2, 0, 1);
     CreateYesNoMenuWin3(taskId, &sYesNoFuncs_Toss);
 }
-#endif
 
 static void Task_TossNo(u8 taskId)
 {
@@ -1155,11 +1136,7 @@ static void Task_Toss_SelectMultiple(u8 taskId)
         ScheduleBgCopyTilemapToVram(0);
         ScheduleBgCopyTilemapToVram(2);
         DestroyScrollIndicatorArrows();
-    #if GAME_LANGUAGE == LANGUAGE_ENGLISH
-        Task_AskTossMultiple(taskId);
-    #else
         Task_AskTossMultiple(data[1], taskId);
-    #endif
     }
     else if (JOY_NEW(B_BUTTON))
     {

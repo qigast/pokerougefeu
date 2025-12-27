@@ -93,17 +93,7 @@ static const u8 sBerryDescriptionPart2_Enigma[] = _("ほしの ちからを も�
 const struct Berry gBerries[] = {
     [ITEM_CHERI_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ZREZA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("CERIZ"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("LIEGIA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("AMRENA"),
-        #else
-            .name = _("CHERI"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 20,
             .maxYield = 3,
@@ -121,17 +111,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_CHESTO_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ATANIA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("MARON"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("STAGNA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("MARON"),
-        #else
-            .name = _("CHESTO"),
-        #endif
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .size = 80,
             .maxYield = 3,
@@ -149,17 +129,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_PECHA_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("MELOC"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("PECHA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("PESCA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("PIRSIF"),
-        #else
-            .name = _("PECHA"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .size = 40,
             .maxYield = 3,
@@ -177,17 +147,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_RAWST_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("SAFRE"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("FRAIVE"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("FRAGO"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("FRAGIA"),
-        #else
-            .name = _("RAWST"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 32,
             .maxYield = 3,
@@ -205,17 +165,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_ASPEAR_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("PERASI"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("WILLIA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("PERINA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("WILBIR"),
-        #else
-            .name = _("ASPEAR"),
-        #endif
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .size = 50,
             .maxYield = 3,
@@ -233,17 +183,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_LEPPA_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ZANAMA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("MEPO"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("MELA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("JONAGO"),
-        #else
-            .name = _("LEPPA"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 28,
             .maxYield = 3,
@@ -261,17 +201,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_ORAN_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ARANJA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("ORAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("RANCIA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("SINEL"),
-        #else
-            .name = _("ORAN"),
-        #endif
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .size = 35,
             .maxYield = 3,
@@ -289,17 +219,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_PERSIM_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("CAQUIC"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("KIKA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("KI"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("PERSIM"),
-        #else
-            .name = _("PERSIM"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 47,
             .maxYield = 3,
@@ -317,17 +237,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_LUM_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ZIUELA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("PRINE"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("PRUGNA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("PRUNUS"),
-        #else
-            .name = _("LUM"),
-        #endif
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .size = 34,
             .maxYield = 2,
@@ -345,17 +255,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_SITRUS_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ZIDRA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("SITRUS"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("CEDRO"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("TSITRU"),
-        #else
-            .name = _("SITRUS"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 95,
             .maxYield = 3,
@@ -373,17 +273,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_FIGY_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("HIGOG"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("FIGUY"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("FICO"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("GIEFE"),
-        #else
-            .name = _("FIGY"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 100,
             .maxYield = 3,
@@ -401,17 +291,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_WIKI_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
             .name = _("WIKI"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
-            .name = _("WIKI"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("KIWI"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("WIKI"),
-        #else
-            .name = _("WIKI"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 115,
             .maxYield = 3,
@@ -429,17 +309,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_MAGO_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ANGO"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("MAGO"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("MANGO"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("MAGO"),
-        #else
-            .name = _("MAGO"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 126,
             .maxYield = 3,
@@ -457,17 +327,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_AGUAV_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("GUAYA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("GOWAV"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("GUAVA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("GAUVE"),
-        #else
-            .name = _("AGUAV"),
-        #endif
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .size = 64,
             .maxYield = 3,
@@ -485,17 +345,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_IAPAPA_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("PABAYA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("PAPAYA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("PAIA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("YAPA"),
-        #else
-            .name = _("IAPAPA"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 223,
             .maxYield = 3,
@@ -513,17 +363,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_RAZZ_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("FRAMBU"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("FRAMBY"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("LAMPON"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("HIMMIH"),
-        #else
-            .name = _("RAZZ"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 120,
             .maxYield = 6,
@@ -541,17 +381,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_BLUK_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ORAM"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("REMU"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("MORA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("MORB"),
-        #else
-            .name = _("BLUK"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 108,
             .maxYield = 6,
@@ -569,17 +399,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_NANAB_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("LATANO"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("NANAB"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("BANA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("NANAB"),
-        #else
-            .name = _("NANAB"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 77,
             .maxYield = 6,
@@ -597,17 +417,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_WEPEAR_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("PERAGU"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("REPOI"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("PERA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("NIRBE"),
-        #else
-            .name = _("WEPEAR"),
-        #endif
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .size = 74,
             .maxYield = 6,
@@ -625,17 +435,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_PINAP_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("PINIA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("NANANA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("NANAS"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("SANANA"),
-        #else
-            .name = _("PINAP"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 80,
             .maxYield = 6,
@@ -653,17 +453,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_POMEG_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("GRANA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("GRENA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("GRANA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("GRANA"),
-        #else
-            .name = _("POMEG"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 135,
             .maxYield = 6,
@@ -681,17 +471,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_KELPSY_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ALGAMA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("ALGA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("LGA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("SETANG"),
-        #else
-            .name = _("KELPSY"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 150,
             .maxYield = 6,
@@ -709,17 +489,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_QUALOT_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ISPERO"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("QUALOT"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("LOQUAT"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("QUALOT"),
-        #else
-            .name = _("QUALOT"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 110,
             .maxYield = 6,
@@ -737,17 +507,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_HONDEW_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("MELUCE"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("LONME"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("MELON"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("HONMEL"),
-        #else
-            .name = _("HONDEW"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 162,
             .maxYield = 6,
@@ -765,17 +525,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_GREPA_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("UVAV"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("RESIN"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("UVA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("LABRUS"),
-        #else
-            .name = _("GREPA"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 149,
             .maxYield = 6,
@@ -793,17 +543,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_TAMATO_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("TAMATE"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("TAMATO"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("MODORO"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("TAMOT"),
-        #else
-            .name = _("TAMATO"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 200,
             .maxYield = 4,
@@ -821,17 +561,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_CORNN_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("MAIS"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("SIAM"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("VENA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("SAIM"),
-        #else
-            .name = _("CORNN"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 75,
             .maxYield = 4,
@@ -849,17 +579,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_MAGOST_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("AOSTAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("MANGOU"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("GOSTAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("MAGOST"),
-        #else
-            .name = _("MAGOST"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 140,
             .maxYield = 4,
@@ -877,17 +597,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_RABUTA_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("RAUTAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("RABUTA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("MBUTAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("RABUTA"),
-        #else
-            .name = _("RABUTA"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 226,
             .maxYield = 4,
@@ -905,17 +615,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_NOMEL_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("MONLI"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("TRONCI"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("LEMON"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("TRONZI"),
-        #else
-            .name = _("NOMEL"),
-        #endif
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .size = 285,
             .maxYield = 4,
@@ -933,17 +633,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_SPELON_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("WIKANO"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("KIWAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("MELOS"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("KIWAN"),
-        #else
-            .name = _("SPELON"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 133,
             .maxYield = 2,
@@ -961,17 +651,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_PAMTRE_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("PLAMA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("PALMA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("PALMA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("PALLM"),
-        #else
-            .name = _("PAMTRE"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .size = 244,
             .maxYield = 2,
@@ -989,17 +669,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_WATMEL_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("SAMBIA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("STEKPA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("COMERO"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("WASMEL"),
-        #else
-            .name = _("WATMEL"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 250,
             .maxYield = 2,
@@ -1017,17 +687,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_DURIN_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("RUDION"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("DURIN"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("DURIAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("DURIN"),
-        #else
-            .name = _("DURIN"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 280,
             .maxYield = 2,
@@ -1045,17 +705,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_BELUE_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ANDANO"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("MYRTE"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("RTILLO"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("MYRTIL"),
-        #else
-            .name = _("BELUE"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_SOFT,
             .size = 300,
             .maxYield = 2,
@@ -1073,17 +723,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_LIECHI_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("LICHI"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("LICHII"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("LICI"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("LYDZI"),
-        #else
-            .name = _("LIECHI"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 111,
             .maxYield = 2,
@@ -1101,17 +741,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_GANLON_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("GONLAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("LINGAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("LONGAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("LINGAN"),
-        #else
-            .name = _("GANLON"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 33,
             .maxYield = 2,
@@ -1129,17 +759,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_SALAC_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ASLAC"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("SAILAK"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("SALAK"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("SALKA"),
-        #else
-            .name = _("SALAC"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 95,
             .maxYield = 2,
@@ -1157,17 +777,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_PETAYA_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("YAPATI"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("PITAYE"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("PITAYA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("TAHAY"),
-        #else
-            .name = _("PETAYA"),
-        #endif
             .firmness = BERRY_FIRMNESS_VERY_HARD,
             .size = 237,
             .maxYield = 2,
@@ -1185,17 +795,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_APICOT_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ARICOC"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("ABRIKO"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("COCCA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("APIKO"),
-        #else
-            .name = _("APICOT"),
-        #endif
             .firmness = BERRY_FIRMNESS_HARD,
             .size = 75,
             .maxYield = 2,
@@ -1213,17 +813,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_LANSAT_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ZONLAN"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("LANSAT"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("LANGSA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("LANSAT"),
-        #else
-            .name = _("LANSAT"),
-        #endif
             .firmness = BERRY_FIRMNESS_SOFT,
             .size = 97,
             .maxYield = 2,
@@ -1241,17 +831,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_STARF_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
-            .name = _("ARABOL"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
             .name = _("FRISTA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("MBOLA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("KRAMBO"),
-        #else
-            .name = _("STARF"),
-        #endif
             .firmness = BERRY_FIRMNESS_SUPER_HARD,
             .size = 153,
             .maxYield = 2,
@@ -1269,17 +849,7 @@ const struct Berry gBerries[] = {
 
     [ITEM_ENIGMA_BERRY - FIRST_BERRY_INDEX] =
         {
-        #if GAME_LANGUAGE == LANGUAGE_SPANISH
             .name = _("ENIGMA"),
-        #elif GAME_LANGUAGE == LANGUAGE_FRENCH
-            .name = _("ENIGMA"),
-        #elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-            .name = _("ENIGMA"),
-        #elif GAME_LANGUAGE == LANGUAGE_GERMAN
-            .name = _("ENIGMA"),
-        #else
-            .name = _("ENIGMA"),
-        #endif
             .firmness = BERRY_FIRMNESS_UNKNOWN,
             .size = 0,
             .maxYield = 2,

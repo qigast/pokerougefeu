@@ -1225,13 +1225,8 @@ void QL_DestroyAbortedDisplay(void)
     }
 }
 
-#if GAME_LANGUAGE == LANGUAGE_FRENCH
-    #define LEFT_COORD 16
-    #define WIDTH 12
-#else
-    #define LEFT_COORD 17
-    #define WIDTH 11
-#endif
+#define LEFT_COORD 16
+#define WIDTH 12
 
 void DrawSeagallopDestinationMenu(void)
 {

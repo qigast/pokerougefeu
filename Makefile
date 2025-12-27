@@ -203,7 +203,7 @@ compare: all
 # Other rules
 rom: $(ROM)
 ifeq ($(COMPARE),1)
-	@$(SHA1) $(BUILD_NAME).sha1
+	@$(SHA1) poke$(BUILD_NAME).sha1
 endif
 
 syms: $(SYM)
@@ -227,59 +227,16 @@ firered:                ; @$(MAKE) GAME_VERSION=FIRERED
 firered_rev1:           ; @$(MAKE) GAME_VERSION=FIRERED GAME_REVISION=1
 leafgreen:              ; @$(MAKE) GAME_VERSION=LEAFGREEN
 leafgreen_rev1:         ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_REVISION=1
-firered_es:             ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=SPANISH
-leafgreen_es:           ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=SPANISH
-firered_it:             ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=ITALIAN
-leafgreen_it:           ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=ITALIAN
-firered_fr:             ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=FRENCH
-leafgreen_fr:           ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=FRENCH
-firered_de:             ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=GERMAN
-leafgreen_de:           ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=GERMAN
 
 compare_firered:        ; @$(MAKE) GAME_VERSION=FIRERED COMPARE=1
 compare_firered_rev1:   ; @$(MAKE) GAME_VERSION=FIRERED GAME_REVISION=1 COMPARE=1
 compare_leafgreen:      ; @$(MAKE) GAME_VERSION=LEAFGREEN COMPARE=1
 compare_leafgreen_rev1: ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_REVISION=1 COMPARE=1
-compare_firered_es:     ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=SPANISH COMPARE=1
-compare_leafgreen_es:   ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=SPANISH COMPARE=1
-compare_firered_it:     ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=ITALIAN COMPARE=1
-compare_leafgreen_it:   ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=ITALIAN COMPARE=1
-compare_firered_fr:     ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=FRENCH COMPARE=1
-compare_leafgreen_fr:   ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=FRENCH COMPARE=1
-compare_firered_de:     ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=GERMAN COMPARE=1
-compare_leafgreen_de:   ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=GERMAN COMPARE=1
 
 firered_modern:        ; @$(MAKE) GAME_VERSION=FIRERED MODERN=1
 firered_rev1_modern:   ; @$(MAKE) GAME_VERSION=FIRERED GAME_REVISION=1 MODERN=1
 leafgreen_modern:      ; @$(MAKE) GAME_VERSION=LEAFGREEN MODERN=1
 leafgreen_rev1_modern: ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_REVISION=1 MODERN=1
-firered_es_modern:     ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=SPANISH MODERN=1
-leafgreen_es_modern:   ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=SPANISH MODERN=1
-firered_it_modern:     ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=ITALIAN MODERN=1
-leafgreen_it_modern:   ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=ITALIAN MODERN=1
-firered_fr_modern:     ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=FRENCH MODERN=1
-leafgreen_fr_modern:   ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=FRENCH MODERN=1
-firered_de_modern:     ; @$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=GERMAN MODERN=1
-leafgreen_de_modern:   ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=GERMAN MODERN=1
-
-#test
-#Ubuntu 22.04 use: time make rojofuego -j$NPROC
-rojofuego:
-	@$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=SPANISH
-	@$(MAKE) syms GAME_VERSION=FIRERED GAME_LANGUAGE=SPANISH
-
-verdehoja:
-	@$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=SPANISH
-	@$(MAKE) syms GAME_VERSION=LEAFGREEN GAME_LANGUAGE=SPANISH
-
-#WSL2 TEST use: time make rossofuoco -j$NPROC
-rossofuoco:
-	@$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=ITALIAN
-	@$(MAKE) syms GAME_VERSION=FIRERED GAME_LANGUAGE=ITALIAN
-
-verdefoglia:
-	@$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=ITALIAN
-	@$(MAKE) syms GAME_VERSION=LEAFGREEN GAME_LANGUAGE=ITALIAN
 
 #WSL2 TEST use: time make rougefeu -j$NPROC
 rougefeu:
@@ -289,15 +246,6 @@ rougefeu:
 vertfeuille:
 	@$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=FRENCH
 	@$(MAKE) syms GAME_VERSION=LEAFGREEN GAME_LANGUAGE=FRENCH
-
-#WSL2 TEST use: time make feuerrote -j$NPROC
-feuerrote:
-	@$(MAKE) GAME_VERSION=FIRERED GAME_LANGUAGE=GERMAN
-	@$(MAKE) syms GAME_VERSION=FIRERED GAME_LANGUAGE=GERMAN
-
-blattgruene:
-	@$(MAKE) GAME_VERSION=LEAFGREEN GAME_LANGUAGE=GERMAN
-	@$(MAKE) syms GAME_VERSION=LEAFGREEN GAME_LANGUAGE=GERMAN
 
 modern: ; @$(MAKE) MODERN=1
 
@@ -409,26 +357,6 @@ ifneq ($(NODEP),1)
 -include $(addprefix $(OBJ_DIR)/,$(REGULAR_DATA_ASM_SRCS:.s=.d))
 endif
 
-ifeq ($(GAME_LANGUAGE),ENGLISH)
-$(OBJ_DIR)/sym_bss.ld: sym_bss.txt
-	$(RAMSCRGEN) .bss $< ENGLISH > $@
-
-$(OBJ_DIR)/sym_common.ld: sym_common.txt $(C_OBJS) $(wildcard common_syms/*.txt)
-	$(RAMSCRGEN) COMMON $< ENGLISH -c $(C_BUILDDIR),common_syms > $@
-
-$(OBJ_DIR)/sym_ewram.ld: sym_ewram.txt
-	$(RAMSCRGEN) ewram_data $< ENGLISH > $@
-endif #ENGLISH
-ifeq ($(GAME_LANGUAGE),ITALIAN)
-$(OBJ_DIR)/sym_bss.ld: sym_bss_it.txt
-	$(RAMSCRGEN) .bss $< ITALIAN > $@
-
-$(OBJ_DIR)/sym_common.ld: sym_common.txt $(C_OBJS) $(wildcard common_syms/*.txt)
-	$(RAMSCRGEN) COMMON $< ITALIAN -c $(C_BUILDDIR),common_syms > $@
-
-$(OBJ_DIR)/sym_ewram.ld: sym_ewram.txt
-	$(RAMSCRGEN) ewram_data $< ITALIAN > $@
-endif #ITALIAN
 ifeq ($(GAME_LANGUAGE),FRENCH)
 $(OBJ_DIR)/sym_bss.ld: sym_bss_fr.txt
 	$(RAMSCRGEN) .bss $< FRENCH > $@
@@ -439,46 +367,12 @@ $(OBJ_DIR)/sym_common.ld: sym_common.txt $(C_OBJS) $(wildcard common_syms/*.txt)
 $(OBJ_DIR)/sym_ewram.ld: sym_ewram.txt
 	$(RAMSCRGEN) ewram_data $< FRENCH > $@
 endif #FRENCH
-ifeq ($(GAME_LANGUAGE),GERMAN)
-$(OBJ_DIR)/sym_bss.ld: sym_bss_de.txt
-	$(RAMSCRGEN) .bss $< GERMAN > $@
-
-$(OBJ_DIR)/sym_common.ld: sym_common.txt $(C_OBJS) $(wildcard common_syms/*.txt)
-	$(RAMSCRGEN) COMMON $< GERMAN -c $(C_BUILDDIR),common_syms > $@
-
-$(OBJ_DIR)/sym_ewram.ld: sym_ewram.txt
-	$(RAMSCRGEN) ewram_data $< GERMAN > $@
-endif #GERMAN
-ifeq ($(GAME_LANGUAGE),SPANISH)
-$(OBJ_DIR)/sym_bss.ld: sym_bss_es.txt
-	$(RAMSCRGEN) .bss $< SPANISH > $@
-
-$(OBJ_DIR)/sym_common.ld: sym_common.txt $(C_OBJS) $(wildcard common_syms/*.txt)
-	$(RAMSCRGEN) COMMON $< SPANISH -c $(C_BUILDDIR),common_syms > $@
-
-$(OBJ_DIR)/sym_ewram.ld: sym_ewram.txt
-	$(RAMSCRGEN) ewram_data $< SPANISH > $@
-endif #SPANISH
-
-# sym_bss_it.txt & ld_script_it.ld maybe the same as the Spanish version
 
 # Linker script
 ifeq ($(MODERN),0)
-  ifeq ($(GAME_LANGUAGE),ENGLISH)
-    LD_SCRIPT := ld_script.ld
-  endif #ENGLISH
   ifeq ($(GAME_LANGUAGE),FRENCH)
     LD_SCRIPT := ld_script_fr.ld
   endif #FRENCH
-  ifeq ($(GAME_LANGUAGE),GERMAN)
-    LD_SCRIPT := ld_script_de.ld
-  endif #GERMAN
-  ifeq ($(GAME_LANGUAGE),ITALIAN)
-    LD_SCRIPT := ld_script_it.ld
-  endif #ITALIAN
-  ifeq ($(GAME_LANGUAGE),SPANISH)
-    LD_SCRIPT := ld_script_es.ld
-  endif #SPANISH
     LD_SCRIPT_DEPS := $(OBJ_DIR)/sym_bss.ld $(OBJ_DIR)/sym_common.ld $(OBJ_DIR)/sym_ewram.ld
 else
 LD_SCRIPT := ld_script_modern.ld

@@ -162,22 +162,8 @@ static const struct ListMenuTemplate sListMenuTemplate_UnionRoomGroups = {
     .cursorKind = 0
 };
 
-#if GAME_LANGUAGE == LANGUAGE_SPANISH
-    #define WT_INVITE_TILEMAP_LEFT  18
-    #define WT_INVITE_WIDTH         10
-#elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-    #define WT_INVITE_TILEMAP_LEFT  18
-    #define WT_INVITE_WIDTH         10
-#elif GAME_LANGUAGE == LANGUAGE_FRENCH
-    #define WT_INVITE_TILEMAP_LEFT  18
-    #define WT_INVITE_WIDTH         10
-#elif GAME_LANGUAGE == LANGUAGE_GERMAN
-    #define WT_INVITE_TILEMAP_LEFT  18
-    #define WT_INVITE_WIDTH         10
-#else
-    #define WT_INVITE_TILEMAP_LEFT  20
-    #define WT_INVITE_WIDTH          8
-#endif
+#define WT_INVITE_TILEMAP_LEFT  18
+#define WT_INVITE_WIDTH         10
 
 static const struct WindowTemplate sWindowTemplate_InviteToActivity = {
     .bg = 0,

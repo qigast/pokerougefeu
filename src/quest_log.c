@@ -994,10 +994,8 @@ void QL_HandleInput(void)
     if (sPlaybackControl.endMode != END_MODE_NONE)
         return;
 
-#if GAME_LANGUAGE != LANGUAGE_ENGLISH
     if (gPaletteFade.active)
         return;
-#endif
 
     if (JOY_NEW(A_BUTTON))
     {

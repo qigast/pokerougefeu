@@ -462,15 +462,9 @@ static const struct BgTemplate sRegionMapBgTemplates[] = {
     }
 };
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-    #define WIN_TOPBAR_LEFT_WIDTH       5
-    #define WIN_TOPBAR_RIGHT_WIDTH      5
-    #define WIN_TOPBAR_RIGHT_BASEBLOCK  0x15a
-#else
-    #define WIN_TOPBAR_LEFT_WIDTH       6
-    #define WIN_TOPBAR_RIGHT_WIDTH      6
-    #define WIN_TOPBAR_RIGHT_BASEBLOCK  0x15c
-#endif
+#define WIN_TOPBAR_LEFT_WIDTH       6
+#define WIN_TOPBAR_RIGHT_WIDTH      6
+#define WIN_TOPBAR_RIGHT_BASEBLOCK  0x15c
 
 static const struct WindowTemplate sRegionMapWindowTemplates[] = {
     [WIN_MAP_NAME] = 
@@ -1793,61 +1787,6 @@ static bool8 DimScreenForSwitchMapMenu(void)
     }
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static bool8 HandleSwitchMapInput(void)
-{
-    bool8 changedSelection = FALSE;
-    struct GpuWindowParams data;
-    data.left = sSwitchMapMenu->highlight.left = 72;
-    data.top = sSwitchMapMenu->highlight.top = 8 * (sSwitchMapMenu->yOffset + 4 * sSwitchMapMenu->currentSelection);
-    data.right = sSwitchMapMenu->highlight.right = 168;
-    data.bottom = sSwitchMapMenu->highlight.bottom = sSwitchMapMenu->highlight.top + 32;
-    if (JOY_NEW(DPAD_UP) && sSwitchMapMenu->currentSelection != 0)
-    {
-        PlaySE(SE_BAG_CURSOR);
-        sSwitchMapMenu->currentSelection--;
-        changedSelection = TRUE;
-    }
-    if (JOY_NEW(DPAD_DOWN) && sSwitchMapMenu->currentSelection < sSwitchMapMenu->maxSelection)
-    {
-        PlaySE(SE_BAG_CURSOR);
-        sSwitchMapMenu->currentSelection++;
-        changedSelection = TRUE;
-    }
-    if (JOY_NEW(A_BUTTON) && sSwitchMapMenu->blendY == 6)
-    {
-        PlaySE(SE_M_SWIFT);
-        sSwitchMapMenu->chosenRegion = sSwitchMapMenu->currentSelection;
-        return TRUE;
-    }
-    if (JOY_NEW(B_BUTTON))
-    {
-        sSwitchMapMenu->currentSelection = sSwitchMapMenu->chosenRegion;
-        BufferRegionMapBg(0, sRegionMap->layouts[sSwitchMapMenu->currentSelection]);
-        CopyBgTilemapBufferToVram(0);
-        SetFlyIconInvisibility(0xFF, NELEMS(sMapIcons->flyIcons), TRUE);
-        SetDungeonIconInvisibility(0xFF, NELEMS(sMapIcons->dungeonIcons), TRUE);
-        return TRUE;
-    }
-    if (changedSelection)
-    {
-        BufferRegionMapBg(0, sRegionMap->layouts[sSwitchMapMenu->currentSelection]);
-        PrintTopBarTextRight(gText_RegionMap_AButtonOK);
-        CopyBgTilemapBufferToVram(0);
-        CopyBgTilemapBufferToVram(3);
-        SetFlyIconInvisibility(0xFF, NELEMS(sMapIcons->flyIcons), TRUE);
-        SetDungeonIconInvisibility(0xFF, NELEMS(sMapIcons->dungeonIcons), TRUE);
-        SetFlyIconInvisibility(sSwitchMapMenu->currentSelection, NELEMS(sMapIcons->flyIcons), FALSE);
-        SetDungeonIconInvisibility(sSwitchMapMenu->currentSelection, NELEMS(sMapIcons->dungeonIcons), FALSE);
-    }
-    if (sSwitchMapMenu->currentSelection != GetRegionMapPlayerIsOn())
-        SetPlayerIconInvisibility(TRUE);
-    else
-        SetPlayerIconInvisibility(FALSE);
-    SetGpuWindowDims(1, &data);
-    return FALSE;
-}
-#else
 NAKED
 static bool8 HandleSwitchMapInput(void)
 {
@@ -2104,7 +2043,6 @@ _80C1928: @return_r0\n\
     bx r1\n\
     .syntax divided\n");
 }
-#endif
 
 static void SpriteCB_SwitchMapCursor(struct Sprite *sprite)
 {
@@ -3198,10 +3136,7 @@ static u16 GetMapsecUnderCursor(void)
         return MAPSEC_NONE;
 
     mapsec = GetSelectedMapSection(GetSelectedRegionMap(), LAYER_MAP, sMapCursor->y, sMapCursor->x);
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-    if ((mapsec == MAPSEC_NAVEL_ROCK || mapsec == MAPSEC_BIRTH_ISLAND) && !FlagGet(FLAG_WORLD_MAP_NAVEL_ROCK_EXTERIOR))
-        mapsec = MAPSEC_NONE;
-#else
+
     if (mapsec == MAPSEC_NAVEL_ROCK)
     {
         if (!FlagGet(FLAG_WORLD_MAP_NAVEL_ROCK_EXTERIOR))
@@ -3212,7 +3147,7 @@ static u16 GetMapsecUnderCursor(void)
         if (!FlagGet(FLAG_WORLD_MAP_BIRTH_ISLAND_EXTERIOR))
             mapsec = MAPSEC_NONE;
     }
-#endif
+
     return mapsec;
 }
 

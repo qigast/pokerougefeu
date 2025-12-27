@@ -630,26 +630,7 @@ static void SetTrainerTowerNPCGraphics(void)
 
 static void TT_ConvertEasyChatMessageToString(u16 *ecWords, u8 *dest)
 {
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-    s32 i;
-    ConvertEasyChatWordsToString(dest, ecWords, 3, 2);
-    if ((unsigned)GetStringWidth(FONT_NORMAL, dest, -1) > 196)
-    {
-        // Has to be printed 2x3
-        ConvertEasyChatWordsToString(dest, ecWords, 2, 3);
-        // Skip line 1
-        i = 0;
-        while (dest[i++] != CHAR_NEWLINE)
-            ;
-        // Skip line 2
-        while (dest[i] != CHAR_NEWLINE)
-            i++;
-        // Replace \n with \l at the end of line 2
-        dest[i] = CHAR_PROMPT_SCROLL;
-    }
-#else 
     Localize_ConvertEasyChatMessageToString(dest, ecWords, 2, 3);
-#endif
 }
 
 static void BufferTowerOpponentSpeech(void)

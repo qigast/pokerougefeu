@@ -2,7 +2,7 @@
 
 GAME_VERSION  ?= FIRERED
 GAME_REVISION ?= 0
-GAME_LANGUAGE ?= ENGLISH
+GAME_LANGUAGE ?= FRENCH
 
 # Builds the ROM using a modern compiler
 MODERN        ?= 0
@@ -27,12 +27,12 @@ BUILD_DIR := build
 ifeq ($(GAME_VERSION),FIRERED)
   TITLE       := POKEMON FIRE
   GAME_CODE   := BPR
-  BUILD_NAME  := firered
+  BUILD_NAME  := rougefeu
 else
 ifeq ($(GAME_VERSION),LEAFGREEN)
   TITLE       := POKEMON LEAF
   GAME_CODE   := BPG
-  BUILD_NAME  := leafgreen
+  BUILD_NAME  := vertfeuille
 else
   $(error unknown version $(GAME_VERSION))
 endif
@@ -49,29 +49,9 @@ ifeq ($(MODERN),1)
 endif
 
 # Language
-ifeq ($(GAME_LANGUAGE),ENGLISH)
-  BUILD_NAME  := $(BUILD_NAME)
-  GAME_CODE   := $(GAME_CODE)E
-else
 ifeq ($(GAME_LANGUAGE),FRENCH)
-  BUILD_NAME  := $(BUILD_NAME)_fr
+  BUILD_NAME  := $(BUILD_NAME)
   GAME_CODE   := $(GAME_CODE)F
 else
-ifeq ($(GAME_LANGUAGE),ITALIAN)
-  BUILD_NAME  := $(BUILD_NAME)_it
-  GAME_CODE   := $(GAME_CODE)I
-else
-ifeq ($(GAME_LANGUAGE),GERMAN)
-  BUILD_NAME  := $(BUILD_NAME)_de
-  GAME_CODE   := $(GAME_CODE)D
-else
-ifeq ($(GAME_LANGUAGE),SPANISH)
-  BUILD_NAME  := $(BUILD_NAME)_es
-  GAME_CODE   := $(GAME_CODE)S
-else
 $(error unknown language $(GAME_LANGUAGE))
-endif
-endif
-endif
-endif
 endif

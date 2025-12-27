@@ -30,20 +30,8 @@ const u8 gGameLanguage = GAME_LANGUAGE;
 
 #if MODERN
 const char BuildDateTime[] = __DATE__ " " __TIME__;
-#elif GAME_LANGUAGE == LANGUAGE_SPANISH
-const char BuildDateTime[] = "2004 07 20 15:50";
-#elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-const char BuildDateTime[] = "2004 07 26 17:40";
 #elif GAME_LANGUAGE == LANGUAGE_FRENCH
 const char BuildDateTime[] = "2004 07 21 13:50";
-#elif GAME_LANGUAGE == LANGUAGE_GERMAN
-const char BuildDateTime[] = "2004 07 26 17:40";
-#else //GAME_LANGUAGE == LANGUAGE_ENGLISH
-#if REVISION == 0
-const char BuildDateTime[] = "2004 04 26 11:20";
-#else //REVISION == 1
-const char BuildDateTime[] = "2004 07 20 09:30";
-#endif //REVISION
 #endif //MODERN
 
 const IntrFunc gIntrTableTemplate[] =
@@ -147,22 +135,6 @@ void AgbMain()
     gHelpSystemEnabled = FALSE;
 
     SetNotInSaveFailedScreen();
-
-#ifndef NDEBUG
-#if ENGLISH && (!SPANISH || !ITALIAN || !GERMAN)
-    #if (LOG_HANDLER == LOG_HANDLER_MGBA_PRINT)
-        (void) MgbaOpen();
-    #elif (LOG_HANDLER == LOG_HANDLER_AGB_PRINT)
-        AGBPrintInit();
-    #endif
-#endif
-#endif
-
-#if REVISION == 1 || (GAME_LANGUAGE == LANGUAGE_ITALIAN || GAME_LANGUAGE == LANGUAGE_GERMAN)
-    if (gFlashMemoryPresent != TRUE)
-        SetMainCallback2(NULL);
-#endif
-
     gLinkTransferringData = FALSE;
 
     for (;;)

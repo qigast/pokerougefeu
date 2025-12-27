@@ -262,11 +262,8 @@ static const u32 sStar_Gfx[]          = INCBIN_U32("graphics/intro/game_freak/st
 static const u16 sSparkles_Pal[]      = INCBIN_U16("graphics/intro/game_freak/sparkles.gbapal");
 static const u32 sSparklesSmall_Gfx[] = INCBIN_U32("graphics/intro/game_freak/sparkles_small.4bpp.lz");
 static const u32 sSparklesBig_Gfx[]   = INCBIN_U32("graphics/intro/game_freak/sparkles_big.4bpp.lz");
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static const u32 sPresents_Gfx[]      = INCBIN_U32("graphics/intro/game_freak/presents.4bpp.lz");
-#else
+
 extern const u32 sPresents_Gfx[];
-#endif
 
 // Scene 1 (Grass close up)
 static const u16 sScene1_Grass_Pal[] = INCBIN_U16("graphics/intro/scene_1/grass.gbapal");
@@ -1253,9 +1250,7 @@ static void IntroCB_GF_RevealLogo(struct IntroSequenceData * this)
         if (!IsDma3ManagerBusyWithBgCopy())
         {
             DestroySprite(this->gameFreakLogoArtSprite);
-        #if REVISION >= 1 || (GAME_LANGUAGE != LANGUAGE_ENGLISH)
             GFScene_CreatePresentsSprite();
-        #endif
             this->timer = 0;
             this->state++;
         }
@@ -2099,14 +2094,12 @@ static struct Sprite *GFScene_CreateLogoSprite(void)
     return &gSprites[spriteId];
 }
 
-#if REVISION >= 1 || (GAME_LANGUAGE != LANGUAGE_ENGLISH)
 static void GFScene_CreatePresentsSprite(void)
 {
     int i;
     for (i = 0; i < 2; i++)
         gSprites[CreateSprite(&sSpriteTemplate_Presents, 104 + 32 * i, 108, 5)].oam.tileNum += i * 4;
 }
-#endif
 
 #define tState  data[0]
 #define tTimer  data[1]

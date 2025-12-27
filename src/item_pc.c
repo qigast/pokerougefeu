@@ -780,28 +780,6 @@ static void ItemPc_MoveItemModeInit(u8 taskId, s16 pos)
     gTasks[taskId].func = Task_ItemPcMoveItemModeRun;
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static void Task_ItemPcMoveItemModeRun(u8 taskId)
-{
-    s16 * data = gTasks[taskId].data;
-
-    ListMenu_ProcessInput(data[0]);
-    ListMenuGetScrollAndRow(data[0], &sListMenuState.scroll, &sListMenuState.row);
-    UpdateSwapLinePos(-32, ListMenuGetYCoordForPrintingArrowCursor(data[0]));
-    if (JOY_NEW(A_BUTTON | SELECT_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        sStateDataPtr->moveModeOrigPos = 0xFF;
-        ItemPc_InsertItemIntoNewSlot(taskId, sListMenuState.scroll + sListMenuState.row);
-    }
-    else if (JOY_NEW(B_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        sStateDataPtr->moveModeOrigPos = 0xFF;
-        ItemPc_MoveItemModeCancel(taskId, sListMenuState.scroll + sListMenuState.row);
-    }
-}
-#else
 static void Task_ItemPcMoveItemModeRun(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
@@ -825,7 +803,6 @@ static void Task_ItemPcMoveItemModeRun(u8 taskId)
         ItemPc_MoveItemModeCancel(taskId, sListMenuState.scroll + sListMenuState.row);
     }
 }
-#endif
 
 static void ItemPc_InsertItemIntoNewSlot(u8 taskId, u32 pos)
 {

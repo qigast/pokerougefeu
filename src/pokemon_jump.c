@@ -2908,15 +2908,9 @@ static const u16 sVenusaur_Pal[] = INCBIN_U16("graphics/pokemon_jump/venusaur.gb
 static const u32 sVenusaur_Gfx[] = INCBIN_U32("graphics/pokemon_jump/venusaur.4bpp.lz");
 static const u32 sVenusaur_Tilemap[] = INCBIN_U32("graphics/pokemon_jump/venusaur.bin.lz");
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static const u16 sBonuses_Pal[] = INCBIN_U16("graphics/pokemon_jump/bonuses.gbapal");
-static const u32 sBonuses_Gfx[] = INCBIN_U32("graphics/pokemon_jump/bonuses.4bpp.lz");
-static const u32 sBonuses_Tilemap[] = INCBIN_U32("graphics/pokemon_jump/bonuses.bin.lz");
-#else
 extern const u16 sBonuses_Pal[];
 extern const u32 sBonuses_Gfx[];
 extern const u32 sBonuses_Tilemap[];
-#endif
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -3340,29 +3334,10 @@ static bool32 ResetVineGfx(void)
     return TRUE;
 }
 
-#if ENGLISH
-static const u8 sPluralTxt[] = _("IES");
-#endif
-
 static void PrintPrizeMessage(u16 itemId, u16 quantity)
 {
     CopyItemName(itemId, sPokemonJumpGfx->itemName);
     ConvertIntToDecimalStringN(sPokemonJumpGfx->itemQuantityStr, quantity, STR_CONV_MODE_LEFT_ALIGN, 1);
-#if ENGLISH
-    if (itemId >= FIRST_BERRY_INDEX && itemId < LAST_BERRY_INDEX)
-    {
-        if (quantity > 1)
-        {
-            int endi = StringLength(sPokemonJumpGfx->itemName);
-            if (endi != 0)
-            {
-                endi--;
-                endi[sPokemonJumpGfx->itemName] = EOS;
-                StringAppend(sPokemonJumpGfx->itemName, sPluralTxt);
-            }
-        }
-    }
-#endif
     DynamicPlaceholderTextUtil_Reset();
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, sPokemonJumpGfx->itemName);
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, sPokemonJumpGfx->itemQuantityStr);

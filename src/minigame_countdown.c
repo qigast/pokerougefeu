@@ -210,13 +210,8 @@ static void SpriteCB_Start(struct Sprite *sprite)
     }
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static const u16 sSpritePal_321Start[] = INCBIN_U16("graphics/misc/minigame_countdown.gbapal");
-static const u16 sSpriteSheet_321Start[] = INCBIN_U16("graphics/misc/minigame_countdown.4bpp.lz");
-#else
 extern const u16 sSpritePal_321Start[];
 extern const u16 sSpriteSheet_321Start[];
-#endif
 
 static void Load321StartGfx(u16 tilesTag, u16 palTag)
 {

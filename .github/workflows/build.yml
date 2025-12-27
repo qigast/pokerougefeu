@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GAME_VERSION: FIRERED
-      GAME_LANGUAGE: ENGLISH
+      GAME_LANGUAGE: FRENCH
       GAME_REVISION: 0
       MODERN: 0
       COMPARE: 1

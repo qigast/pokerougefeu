@@ -153,21 +153,15 @@ static void CreateTrainerCardTrainerPic(void);
 
 // Data
 static const u32 sTrainerCardStickers_Gfx[]           = INCBIN_U32("graphics/trainer_card/stickers.4bpp.lz");
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static const u32 sHoennTrainerCardFront_Tilemap[]     = INCBIN_U32("graphics/trainer_card/rse/front.bin.lz");
-#else
+
 extern const u32 sHoennTrainerCardFront_Tilemap[];
-#endif
+
 static const u32 sKantoTrainerCardFront_Tilemap[]     = INCBIN_U32("graphics/trainer_card/front.bin.lz");
 static const u32 sHoennTrainerCardBack_Tilemap[]      = INCBIN_U32("graphics/trainer_card/rse/back.bin.lz");
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static const u32 sKantoTrainerCardBack_Tilemap[]      = INCBIN_U32("graphics/trainer_card/back.bin.lz");
-static const u32 sHoennTrainerCardFrontLink_Tilemap[] = INCBIN_U32("graphics/trainer_card/rse/front_link.bin.lz");
-#else
 extern const u32 sKantoTrainerCardBack_Tilemap[];
 extern const u32 sHoennTrainerCardFrontLink_Tilemap[];
-#endif
+
 static const u32 sKantoTrainerCardFrontLink_Tilemap[] = INCBIN_U32("graphics/trainer_card/front_link.bin.lz");
 static const u32 sHoennTrainerCardBg_Tilemap[]        = INCBIN_U32("graphics/trainer_card/rse/bg.bin.lz");
 static const u32 sKantoTrainerCardBg_Tilemap[]        = INCBIN_U32("graphics/trainer_card/bg.bin.lz");
@@ -351,29 +345,12 @@ static bool8 (*const sTrainerCardFlipTasks[])(struct Task *) =
     Task_EndCardFlip
 };
 
-#if GAME_LANGUAGE == LANGUAGE_SPANISH
-    #define BACKNAME_X_POS 0x94
-    #define STARTYOFFSET2   7
-#elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-    #define BACKNAME_X_POS  0x94
-    #define STARTYOFFSET2   7
-#elif GAME_LANGUAGE == LANGUAGE_FRENCH
-    #define BACKNAME_X_POS  0x8A
-    #define STARTYOFFSET2   7
-#elif GAME_LANGUAGE == LANGUAGE_GERMAN
-    #define BACKNAME_X_POS  0x8A
-    #define STARTYOFFSET2   7
-#else //#elif GAME_LANGUAGE == LANGUAGE_ENGLISH
-    #define BACKNAME_X_POS  0x8A
-    #define STARTYOFFSET2   6
-#endif
+#define BACKNAME_X_POS  0x8A
+#define STARTYOFFSET2   7
 
 static const u8 sTrainerCardFrontNameXPositions[] = {0x14, 0x10};
 static const u8 sTrainerCardFrontNameYPositions[] = {0x1D, 0x21};
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static const u8 sTrainerCardIdXPositions[] = {0x8E, 0x80};
-static const u8 sTrainerCardIdYPositions[] = {0xA, 0x9};
-#endif
+
 static const u8 *const sTimeColonTextColors[] = {sTrainerCardTextColors, sTimeColonInvisibleTextColors};
 static const u8 sTrainerCardTimeHoursXPositions[] = {0x65, 0x55};
 static const u8 sTrainerCardTimeHoursYPositions[] = {0x77, 0x67};
@@ -1165,17 +1142,6 @@ static void PrintNameOnCardFront(void)
     AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], sTrainerCardFrontNameXPositions[sTrainerCardDataPtr->cardType], sTrainerCardFrontNameYPositions[sTrainerCardDataPtr->cardType], sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer[0]);
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static void PrintIdOnCard(void)
-{
-    u8 buffer[32];
-    u8 *txtPtr;
-
-    txtPtr = StringCopy(buffer, gText_TrainerCardIDNo);
-    ConvertIntToDecimalStringN(txtPtr, sTrainerCardDataPtr->trainerCard.rse.trainerId, STR_CONV_MODE_LEADING_ZEROS, 5);
-    AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], sTrainerCardIdXPositions[sTrainerCardDataPtr->cardType], sTrainerCardIdYPositions[sTrainerCardDataPtr->cardType], sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
-}
-#else
 static void PrintIdOnCard(void)
 {
     u8 buffer[32];
@@ -1196,7 +1162,6 @@ static void PrintIdOnCard(void)
     }
     AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
 }
-#endif
 
 static void PrintMoneyOnCard(void)
 {
@@ -1204,13 +1169,9 @@ static void PrintMoneyOnCard(void)
     u8 *txtPtr;
     u8 x;
 
-#if (GAME_LANGUAGE == LANGUAGE_ENGLISH) || (GAME_LANGUAGE == LANGUAGE_ITALIAN)
-    txtPtr = StringCopy(buffer, gText_TrainerCardYen);
-    ConvertIntToDecimalStringN(txtPtr, sTrainerCardDataPtr->trainerCard.rse.money, STR_CONV_MODE_LEFT_ALIGN, 6);
-#else
     txtPtr = ConvertIntToDecimalStringN(buffer, sTrainerCardDataPtr->trainerCard.rse.money, STR_CONV_MODE_LEFT_ALIGN, 6);
     StringCopy(txtPtr, gText_TrainerCardYen);
-#endif
+
     if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE)
     {
         x = -122 - 6 * StringLength(buffer);
@@ -1318,12 +1279,8 @@ static void BufferNameForCardBack(void)
     ConvertInternationalString(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME], sTrainerCardDataPtr->language);
     if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
     {
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-        StringAppend(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME], gText_Var1sTrainerCard);
-#else
         StringCopy(gStringVar1,sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME]);
         StringExpandPlaceholders(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME], gText_Var1sTrainerCard);
-#endif
     }
 }
 
@@ -1387,22 +1344,8 @@ static void BufferLinkBattleResults(void)
     }
 }
 
-#if GAME_LANGUAGE == LANGUAGE_SPANISH
-    #define X_COORD_WIN_LOSS 136
-    #define X_COORD_LINK_WINS 149
-#elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-    #define X_COORD_WIN_LOSS 130
-    #define X_COORD_LINK_WINS 148
-#elif GAME_LANGUAGE == LANGUAGE_FRENCH
-    #define X_COORD_WIN_LOSS 130
-    #define X_COORD_LINK_WINS 148
-#elif GAME_LANGUAGE == LANGUAGE_GERMAN
-    #define X_COORD_WIN_LOSS 132
-    #define X_COORD_LINK_WINS 148
-#else //LANGUAGE_ENGLISH
-    #define X_COORD_WIN_LOSS 130
-    #define X_COORD_LINK_WINS 144
-#endif
+#define X_COORD_WIN_LOSS 130
+#define X_COORD_LINK_WINS 148
 
 static void PrintLinkBattleResultsOnCard(void)
 {    

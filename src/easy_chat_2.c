@@ -282,63 +282,24 @@ void ShowEasyChatScreen(void)
     DoEasyChatScreen(gSpecialVar_0x8004, words, CB2_ReturnToFieldContinueScript);
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH || GAME_LANGUAGE == LANGUAGE_GERMAN
-static const u16 sECPhrase_MysteryEventIsExciting[] = {
-    EC_WORD_MYSTERY,
-    EC_WORD_EVENT,
-    EC_WORD_IS,
-    EC_WORD_EXCITING
-};
-#else //LANGUAGE_SPANISH || LANGUAGE_ITALIAN || LANGUAGE_FRENCH
 static const u16 sECPhrase_MysteryEventIsExciting[] = {
     EC_WORD_EVENT,
     EC_WORD_MYSTERY,
     EC_WORD_IS,
     EC_WORD_EXCITING,
 };
-#endif
 
 static void CompareProfileResponseWithPassphrase(void)
 {
     gSpecialVar_0x8004 = IsPhraseDifferentThanPlayerInput(sECPhrase_MysteryEventIsExciting, NELEMS(sECPhrase_MysteryEventIsExciting));
 }
 
-#if GAME_LANGUAGE == LANGUAGE_SPANISH
-static const u16 sECPhrase_LinkTogetherWithAll[] = {
-    EC_WORD_LINK,
-    EC_WORD_MISS,
-    EC_WORD_TO_THEM,
-    EC_WORD_UNDEFINED,
-};
-#elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-static const u16 sECPhrase_LinkTogetherWithAll[] = {
-    EC_WORD_ME,
-    EC_WORD_TOO_LATE,
-    EC_WORD_LINK,
-    EC_WORD_EXCL,
-};
-#elif GAME_LANGUAGE == LANGUAGE_FRENCH
 static const u16 sECPhrase_LinkTogetherWithAll[] = {
     EC_WORD_LINK,
     EC_WORD_WITH,
     EC_WORD_CASE,
     EC_WORD_TRAINER,
 };
-#elif GAME_LANGUAGE == LANGUAGE_GERMAN
-static const u16 sECPhrase_LinkTogetherWithAll[] = {
-    EC_WORD_LINK,
-    EC_WORD_WITH,
-    EC_WORD_ALL,
-    EC_WORD_TOGETHER,
-};
-#else //LANGUAGE_ENGLISH
-static const u16 sECPhrase_LinkTogetherWithAll[] = {
-    EC_WORD_LINK,
-    EC_WORD_TOGETHER,
-    EC_WORD_WITH,
-    EC_WORD_ALL
-};
-#endif
 
 static void CompareQuestionnaireResponseWithPassphrase(void)
 {

@@ -357,15 +357,9 @@ static const u32 sPikachu2_Tiles[] = INCBIN_U32("graphics/credits/pikachu_2.4bpp
 
 static const u32 sUnused = 0xF0;
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-static const u16 sTheEnd_Pal[] = INCBIN_U16("graphics/credits/the_end.gbapal");
-static const u8 sTheEnd_Tiles[] = INCBIN_U8("graphics/credits/the_end.4bpp.lz");
-static const u8 sTheEnd_Tilemap[] = INCBIN_U8("graphics/credits/the_end.bin.lz");
-#else
 extern const u16 sTheEnd_Pal[];
 extern const u8 sTheEnd_Tiles[];
 extern const u8 sTheEnd_Tilemap[];
-#endif
 
 static const struct CompressedGraphicsHeader sCopyrightOrTheEndGfxHeaders[] = {
     {
@@ -1276,10 +1270,8 @@ static bool32 DoCopyrightOrTheEndGfxScene(void)
         if (!gPaletteFade.active)
         {
             sCreditsMgr->subseqno = 0;
-#if GAME_LANGUAGE != LANGUAGE_ENGLISH
             if (sCreditsMgr->whichMon)
                 FadeOutMapMusic(16);
-#endif
             return TRUE;
         }
         break;

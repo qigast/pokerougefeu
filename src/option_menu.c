@@ -65,9 +65,7 @@ static void PrintOptionMenuHeader(void);
 static void DrawOptionMenuBg(void);
 static void LoadOptionMenuItemNames(void);
 static void UpdateSettingSelectionDisplay(u16 selection);
-#if GAME_LANGUAGE != LANGUAGE_ENGLISH
 static void Localize_BufferOptionMenuString(void);
-#endif
 
 // Data Definitions
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -386,21 +384,13 @@ static void Task_OptionMenu(u8 taskId)
         case 2:
             LoadBgTiles(1, GetUserWindowGraphics(sOptionMenuPtr->option[MENUITEM_FRAMETYPE])->tiles, 0x120, 0x1AA);
             LoadPalette(GetUserWindowGraphics(sOptionMenuPtr->option[MENUITEM_FRAMETYPE])->palette, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-            BufferOptionMenuString(sOptionMenuPtr->cursorPos);
-#else
             Localize_BufferOptionMenuString();
-#endif
             break;
         case 3:
             UpdateSettingSelectionDisplay(sOptionMenuPtr->cursorPos);
             break;
         case 4:
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-            BufferOptionMenuString(sOptionMenuPtr->cursorPos);
-#else
             Localize_BufferOptionMenuString();
-#endif
             break;
         }
         break;
@@ -516,7 +506,6 @@ static void BufferOptionMenuString(u8 selection)
     CopyWindowToVram(1, COPYWIN_FULL);
 }
 
-#if GAME_LANGUAGE != LANGUAGE_ENGLISH
 static void Localize_BufferOptionMenuString(void)
 {
     u8 str[20];
@@ -556,7 +545,6 @@ static void Localize_BufferOptionMenuString(void)
     PutWindowTilemap(1);
     CopyWindowToVram(1, COPYWIN_FULL);
 }
-#endif
 
 static void CloseAndSaveOptionMenu(u8 taskId)
 {

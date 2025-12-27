@@ -6452,13 +6452,7 @@ u8 *MonSpritesGfxManager_GetSpritePtr(u8 spriteNum)
     }
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ITALIAN || GAME_LANGUAGE == LANGUAGE_GERMAN
-u8 *Localize_BattleStrings(const u8 *src)
-{
-}
-#endif
-
-#if GAME_LANGUAGE == LANGUAGE_SPANISH || GAME_LANGUAGE == LANGUAGE_FRENCH
+// TODO: Document the following functions
 //Is trainer class n name in src ?
 static bool32 es_sub_8044D1C(u8 *src)
 {
@@ -6476,14 +6470,14 @@ static bool32 es_sub_8044D1C(u8 *src)
         switch (r2)
         {
         case FALSE:
-            if (r1[0] == 0xFD && r1[1] == 0x1C)//B_TRAINER1_CLASS = FD 1C
+            if (r1[0] == B_BUFF_PLACEHOLDER_BEGIN && r1[1] == B_TXT_TRAINER1_CLASS)//B_TRAINER1_CLASS = FD 1C
             {
                 r1++;
                 r2 = TRUE;
             }
             break;
         case TRUE:
-            if (r1[0] == 0xFD && r1[1] == 0x1D)//B_TRAINER1_NAME = FD 1D
+            if (r1[0] == B_BUFF_PLACEHOLDER_BEGIN && r1[1] == B_TXT_TRAINER1_NAME)//B_TRAINER1_NAME = FD 1D
                 return TRUE;
             break;
         }
@@ -6546,5 +6540,3 @@ u8 *Localize_BattleStrings(u8 *src)
     
     return r5;
 }
-
-#endif

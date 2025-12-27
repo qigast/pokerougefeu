@@ -39,11 +39,7 @@ enum {
 };
 
 #define KBROW_COUNT 4
-#if GAME_LANGUAGE == LANGUAGE_FRENCH || GAME_LANGUAGE == LANGUAGE_GERMAN
 #define KBCOL_COUNT 9
-#else
-#define KBCOL_COUNT 8
-#endif    
 
 enum {
     GFXTAG_BACK_BUTTON,
@@ -378,7 +374,6 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
 
 // This handles what characters get inserted when a key is pressed
 // The keys shown on the keyboard are handled separately by sNamingScreenKeyboardText
-#if GAME_LANGUAGE == LANGUAGE_FRENCH
 static const u8 sKeyboardChars[KBPAGE_COUNT][KBROW_COUNT][KBCOL_COUNT] = {
     [KEYBOARD_LETTERS_LOWER] = {
         __("abcdefgh."),
@@ -399,49 +394,6 @@ static const u8 sKeyboardChars[KBPAGE_COUNT][KBROW_COUNT][KBCOL_COUNT] = {
         __("…“”‘'"),
     }
 };
-#elif GAME_LANGUAGE == LANGUAGE_GERMAN
-static const u8 sKeyboardChars[KBPAGE_COUNT][KBROW_COUNT][KBCOL_COUNT] = {
-    [KEYBOARD_LETTERS_LOWER] = {
-        __("abcdefgh."),
-        __("ijklmnop,"),
-        __("qrstuvwx "),
-        __("yz  äöü  "),
-    },
-    [KEYBOARD_LETTERS_UPPER] = {
-        __("ABCDEFGH."),
-        __("IJKLMNOP,"),
-        __("QRSTUVWX "),
-        __("YZ  ÄÖÜ  "),
-    },
-    [KEYBOARD_SYMBOLS] = {
-        __("01234    "),
-        __("56789    "),
-        __("!?♂♀/-   "),
-        __("…“”‘'    "),
-    }
-};
-#else
-static const u8 sKeyboardChars[KBPAGE_COUNT][KBROW_COUNT][KBCOL_COUNT] = {
-    [KEYBOARD_LETTERS_LOWER] = {
-        __("abcdef ."),
-        __("ghijkl ,"),
-        __("mnopqrs"),
-        __("tuvwxyz"),
-    },
-    [KEYBOARD_LETTERS_UPPER] = {
-        __("ABCDEF ."),
-        __("GHIJKL ,"),
-        __("MNOPQRS"),
-        __("TUVWXYZ"),
-    },
-    [KEYBOARD_SYMBOLS] = {
-        __("01234"),
-        __("56789"),
-        __("!?♂♀/-"),
-        __("…“”‘'"),
-    }
-};
-#endif
 
 static const u8 sPageColumnCounts[] = {
     [KEYBOARD_LETTERS_LOWER] = KBCOL_COUNT,
@@ -449,19 +401,11 @@ static const u8 sPageColumnCounts[] = {
     [KEYBOARD_SYMBOLS]       = 6
 };
 
-#if GAME_LANGUAGE == LANGUAGE_FRENCH || GAME_LANGUAGE == LANGUAGE_GERMAN
 static const u8 sPageColumnXPos[KBPAGE_COUNT][KBCOL_COUNT] = {
     [KEYBOARD_LETTERS_LOWER] = {0, 12, 24, 36, 62, 74, 86, 98, 123},
     [KEYBOARD_LETTERS_UPPER] = {0, 12, 24, 36, 62, 74, 86, 98, 123},
     [KEYBOARD_SYMBOLS]       = {0, 22, 44, 66, 88, 110}
 };
-#else
-static const u8 sPageColumnXPos[KBPAGE_COUNT][KBCOL_COUNT] = {
-    [KEYBOARD_LETTERS_LOWER] = {0, 12, 24, 56, 68, 80, 92, 123},
-    [KEYBOARD_LETTERS_UPPER] = {0, 12, 24, 56, 68, 80, 92, 123},
-    [KEYBOARD_SYMBOLS]       = {0, 22, 44, 66, 88, 110}
-};
-#endif
 
 void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGender, u32 monPersonality, MainCallback returnCallback)
 {
@@ -1762,13 +1706,8 @@ static void DrawMonTextEntryBox(void)
 {
     u8 buffer[32];
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-    StringCopy(buffer, gSpeciesNames[sNamingScreen->monSpecies]);
-    StringAppendN(buffer, sNamingScreen->template->title, 15);
-#else
     StringCopy(gStringVar1, gSpeciesNames[sNamingScreen->monSpecies]);
     StringExpandPlaceholders(buffer, sNamingScreen->template->title);
-#endif
     FillWindowPixelBuffer(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], PIXEL_FILL(1));
     AddTextPrinterParameterized(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], FONT_NORMAL_COPY_1, buffer, 1, 1, 0, NULL);
     PutWindowTilemap(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX]);

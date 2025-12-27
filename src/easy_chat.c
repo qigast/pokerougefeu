@@ -63,39 +63,6 @@ static const u8 *const sEasyChatGroupNamePointers[] = {
     [EC_GROUP_POKEMON_2] = gEasyChatGroupName_Pokemon2,
 };
 
-#if GAME_LANGUAGE == LANGUAGE_SPANISH
-static const u16 sDefaultProfileWords[] = {
-    EC_WORD_ISN_T_IT_QUES,
-    EC_WORD_BEING,
-    EC_WORD_ALT_COLOR,
-    EC_WORD_POKEMON,
-};
-
-static const u16 sDefaultBattleStartWords[] = {
-    EC_WORD_QUES_EXCL,
-    EC_WORD_HAVE,
-    EC_WORD_THOSE_ARE,
-    EC_WORD_LIE,
-    EC_WORD_FIGHTS,
-    EC_WORD_QUES,
-};
-#elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-static const u16 sDefaultProfileWords[] = {
-    EC_WORD_ABSENT,
-    EC_WORD_LAY,
-    EC_WORD_ALL,
-    EC_WORD_POKEMON,
-};
-
-static const u16 sDefaultBattleStartWords[] = {
-    EC_WORD_WILL_BE_HERE,
-    EC_WORD_WHERE,
-    EC_WORD_STRONG,
-    EC_WORD_QUES,
-    EC_WORD_HERE_I_COME,
-    EC_WORD_EXCL,
-};
-#elif GAME_LANGUAGE == LANGUAGE_FRENCH
 static const u16 sDefaultProfileWords[] = {
     EC_WORD_ADORE,
     EC_WORD_CASE,
@@ -111,39 +78,6 @@ static const u16 sDefaultBattleStartWords[] = {
     EC_WORD_UNDEFINED,
     EC_WORD_UNDEFINED,
 };
-#elif GAME_LANGUAGE == LANGUAGE_GERMAN
-static const u16 sDefaultProfileWords[] = {
-    EC_WORD_I_AM,
-    EC_WORD_BIG,
-    EC_WORD_IN,
-    EC_WORD_POKEMON,
-};
-
-static const u16 sDefaultBattleStartWords[] = {
-    EC_WORD_ARE,
-    EC_WORD_YOU,
-    EC_WORD_READY,
-    EC_WORD_QUES,
-    EC_WORD_HERE_I_COME,
-    EC_WORD_EXCL,
-};
-#else //LANGUAGE_ENGLISH
-static const u16 sDefaultProfileWords[] = {
-    EC_WORD_I_AM,
-    EC_WORD_A,
-    EC_WORD_POKEMON,
-    EC_WORD_FRIEND,
-};
-
-static const u16 sDefaultBattleStartWords[] = {
-    EC_WORD_ARE,
-    EC_WORD_YOU,
-    EC_WORD_READY,
-    EC_WORD_QUES,
-    EC_WORD_HERE_I_COME,
-    EC_WORD_EXCL,
-};
-#endif
 
 static const u16 sDeoxysValue[] = {
     SPECIES_DEOXYS,
@@ -280,7 +214,6 @@ u8 *ConvertEasyChatWordsToString(u8 *dest, const u16 *src, u16 columns, u16 rows
     return dest;
 }
 
-#if GAME_LANGUAGE != LANGUAGE_ENGLISH
 u8 *Localize_ConvertEasyChatMessageToString(u8 *dest, const u16 *src, u16 columns, u16 rows)
 {
     u16 i, j, k;
@@ -332,7 +265,6 @@ u8 *Localize_ConvertEasyChatMessageToString(u8 *dest, const u16 *src, u16 column
     *dest = EOS;
     return dest;
 }
-#endif
 
 static u16 GetEasyChatWordStringLength(u16 easyChatWord)
 {

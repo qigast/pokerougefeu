@@ -16,17 +16,7 @@ EWRAM_DATA struct BagPocket gBagPockets[NUM_BAG_POCKETS] = {};
 void SortAndCompactBagPocket(struct BagPocket * pocket);
 
 // Item descriptions and data
-#if GAME_LANGUAGE == LANGUAGE_SPANISH
-#include "data/items_es.h"
-#elif GAME_LANGUAGE == LANGUAGE_ITALIAN
-#include "data/items_it.h"
-#elif GAME_LANGUAGE == LANGUAGE_FRENCH
 #include "data/items_fr.h"
-#elif GAME_LANGUAGE == LANGUAGE_GERMAN
-#include "data/items_de.h"
-#else
-#include "data/items_en.h"
-#endif
 
 u16 GetBagItemQuantity(u16 * ptr)
 {
@@ -80,25 +70,10 @@ void SetBagPocketsPointers(void)
     gBagPockets[POCKET_BERRY_POUCH - 1].capacity = BAG_BERRIES_COUNT;
 }
 
-#if GAME_LANGUAGE == LANGUAGE_ENGLISH
-void CopyItemName(u16 itemId, u8 * dest)
-{
-    if (itemId == ITEM_ENIGMA_BERRY)
-    {
-        StringCopy(dest, GetBerryInfo(ITEM_TO_BERRY(ITEM_ENIGMA_BERRY))->name);
-        StringAppend(dest, gText_Berry);
-    }
-    else
-    {
-        StringCopy(dest, ItemId_GetName(itemId));
-    }
-}
-#else
 void CopyItemName(u16 itemId, u8 * dest)
 {
     StringCopy(dest, ItemId_GetName(itemId));
 }
-#endif
 
 s8 BagPocketGetFirstEmptySlot(u8 pocketId)
 {

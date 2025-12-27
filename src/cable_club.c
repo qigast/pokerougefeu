@@ -466,9 +466,7 @@ static void Task_LinkupFailed(u8 taskId)
 {
     gSpecialVar_Result = LINKUP_FAILED;
     ClearLinkPlayerCountWindow(gTasks[taskId].tWindowId);
-#if GAME_LANGUAGE != LANGUAGE_ENGLISH
     RemoveWindow(gTasks[taskId].tWindowId);
-#endif
     HideFieldMessageBox();
     ScriptContext_Enable();
     DestroyTask(taskId);
@@ -478,9 +476,7 @@ static void Task_LinkupConnectionError(u8 taskId)
 {
     gSpecialVar_Result = LINKUP_CONNECTION_ERROR;
     ClearLinkPlayerCountWindow(gTasks[taskId].tWindowId);
-#if GAME_LANGUAGE != LANGUAGE_ENGLISH
     RemoveWindow(gTasks[taskId].tWindowId);
-#endif
     HideFieldMessageBox();
     ScriptContext_Enable();
     DestroyTask(taskId);
