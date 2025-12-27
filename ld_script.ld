@@ -20,9 +20,9 @@ SECTIONS {
         INCLUDE "sym_ewram.ld"
         src/*.o(ewram_data);
 
-        *libc.a:impure.o(.data);
+        /* *libc.a:impure.o(.data);
         *libc.a:locale.o(.data);
-        *libc.a:mallocr.o(.data);
+        *libc.a:mallocr.o(.data); */
     } > EWRAM
 
     iwram 0x3000000 (NOLOAD) :
@@ -33,14 +33,14 @@ SECTIONS {
         src/*.o(.bss);
         data/*.o(.bss);
 
-        /* .bss.code starts at 0x30028E0 */
+        /* .bss.code starts at 0x3002830 */
         src/m4a.o(.bss.code);
 
-        /* COMMON starts at 0x30030E0 */
+        /* COMMON starts at 0x3003030 */
         INCLUDE "sym_common.ld"
         src/*.o(COMMON);
 
-        *libc.a:sbrkr.o(COMMON);
+        /* *libc.a:sbrkr.o(COMMON); */
         end = .;
     } > IWRAM
 
@@ -379,7 +379,7 @@ SECTIONS {
         *libc.a:mprec.o(.text);
         *libc.a:s_isinf.o(.text);
         *libc.a:s_isnan.o(.text);
-        *libc.a:sbrkr.o(.text);
+        /* *libc.a:sbrkr.o(.text); */
         *libc.a:stdio.o(.text);
         *libc.a:strlen.o(.text);
         *libc.a:syscalls.o(.text);
@@ -1002,7 +1002,7 @@ SECTIONS {
         *libc.a:mprec.o(.rodata);
         *libc.a:s_isinf.o(.rodata);
         *libc.a:s_isnan.o(.rodata);
-        *libc.a:sbrkr.o(.rodata);
+        *libc.a:sbrkr.o(.rodata); /*why ?*/
         *libc.a:stdio.o(.rodata);
         *libc.a:strlen.o(.rodata);
         *libc.a:syscalls.o(.rodata);

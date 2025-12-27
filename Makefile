@@ -358,7 +358,7 @@ ifneq ($(NODEP),1)
 endif
 
 ifeq ($(GAME_LANGUAGE),FRENCH)
-$(OBJ_DIR)/sym_bss.ld: sym_bss_fr.txt
+$(OBJ_DIR)/sym_bss.ld: sym_bss.txt
 	$(RAMSCRGEN) .bss $< FRENCH > $@
 
 $(OBJ_DIR)/sym_common.ld: sym_common.txt $(C_OBJS) $(wildcard common_syms/*.txt)
@@ -371,7 +371,7 @@ endif #FRENCH
 # Linker script
 ifeq ($(MODERN),0)
   ifeq ($(GAME_LANGUAGE),FRENCH)
-    LD_SCRIPT := ld_script_fr.ld
+    LD_SCRIPT := ld_script.ld
   endif #FRENCH
     LD_SCRIPT_DEPS := $(OBJ_DIR)/sym_bss.ld $(OBJ_DIR)/sym_common.ld $(OBJ_DIR)/sym_ewram.ld
 else
