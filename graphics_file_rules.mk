@@ -5,16 +5,10 @@ INTERFACEGFXDIR := graphics/interface
 PARTYMENUGFXDIR := graphics/party_menu
 BTLANMSPRGFXDIR := graphics/battle_anims/sprites
 UNUSEDGFXDIR := graphics/unused
-UNKNOWNGFXDIR := graphics/unknown
 BATINTGFXDIR := graphics/battle_interface
 MASKSGFXDIR := graphics/battle_anims/masks
 BATTRANSGFXDIR := graphics/battle_transitions
-TYPESGFXDIR := graphics/types
-RAYQUAZAGFXDIR := graphics/rayquaza_scene
-ROULETTEGFXDIR := graphics/roulette
 SLOTMACHINEGFXDIR := graphics/slot_machine
-PSSGFXDIR := graphics/pokemon_storage
-EVENTOBJGFXDIR := graphics/object_events
 FIELDEFFECTSGFXDIR := graphics/field_effects
 MISCGFXDIR := graphics/misc
 TEXTWINDOWGFXDIR := graphics/text_window
@@ -22,7 +16,6 @@ TEACHYTVGFXDIR := graphics/teachy_tv
 SSANNEGFXDIR := graphics/ss_anne
 ITEMPCGFXDIR := graphics/item_pc
 TITLESCREENGFXDIR := graphics/title_screen
-CREDITSGFXDIR := graphics/credits
 ITEMMENUGFXDIR := graphics/item_menu
 INTROGFXDIR := graphics/intro
 BATTLETERRAINGFXDIR := graphics/battle_terrain
@@ -32,9 +25,6 @@ MAPPREVIEWGFXDIR := graphics/map_preview
 NAMINGGFXDIR := graphics/naming_screen
 WALLPAPERGFXDIR := graphics/pokemon_storage/wallpapers
 JPCONTESTGFXDIR := graphics/contest/japanese
-
-types := normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark
-contest_types := cool beauty cute smart tough
 
 CASTFORMGFXDIR := graphics/pokemon/castform
 $(CASTFORMGFXDIR)/front.4bpp: $(CASTFORMGFXDIR)/normal/front.4bpp \
@@ -142,14 +132,8 @@ $(FONTGFXDIR)/braille.fwjpnfont: $(FONTGFXDIR)/braille.png
 $(FONTGFXDIR)/japanese_bold.fwjpnfont: $(FONTGFXDIR)/japanese_bold.png
 	$(GFX) $< $@
 
-graphics/title_screen/pokemon_logo.gbapal: %.gbapal: %.pal
-	$(GFX) $< $@ -num_colors 224
-
 graphics/pokemon_jump/bg.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 63 -Wnum_tiles
-
-$(MISCGFXDIR)/japanese_hof.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 29 -Wnum_tiles
 
 $(MISCGFXDIR)/markings2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 25 -Wnum_tiles
@@ -497,24 +481,6 @@ $(INTERFACEGFXDIR)/selector_outline.4bpp: %.4bpp: %.png
 
 graphics/tm_case/tm_case.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 91 -Wnum_tiles
-
-$(PKNAVGFXDIR)/header.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 53 -Wnum_tiles
-
-$(PKNAVGFXDIR)/outline.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 53 -Wnum_tiles
-	
-$(PKNAVGFXDIR)/ui_matchcall.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 13 -Wnum_tiles
-
-$(INTERFACEGFXDIR)/region_map.8bpp: %.8bpp: %.png
-	$(GFX) $< $@ -num_tiles 232 -Wnum_tiles
-
-$(INTERFACEGFXDIR)/region_map_affine.8bpp: %.8bpp: %.png
-	$(GFX) $< $@ -num_tiles 233 -Wnum_tiles
-
-$(MISCGFXDIR)/birch_help.4bpp: $(MISCGFXDIR)/birch_bag.4bpp $(MISCGFXDIR)/birch_grass.4bpp
-	@cat $^ >$@
 	
 $(FAMECHECKERGFXDIR)/spinning_pokeball.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 15 -Wnum_tiles
