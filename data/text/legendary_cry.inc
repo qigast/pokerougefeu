@@ -1,7 +1,7 @@
 @ Call for legendary bird trio
 Text_Gyaoo::
-	.string "Gyaoo!$"
+	.string "Yahou!$"
 
 Text_MoveCanOnlyBeLearnedOnce::
-	.string "This move can be learned only\n"
-	.string "once. Is that okay?$"
+	.string "Cette capacité ne peut être\n"
+	.string "apprise qu'une fois, OK?$"

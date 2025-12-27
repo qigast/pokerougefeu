@@ -3,5 +3,5 @@
 #include "constants/global.h"
 	.include "constants/version.inc"
 gMultiBootProgram_BerryGlitchFix_Start::
-	.incbin "data/mb_berry_fix_fr.gba"
+	.incbin "data/mb_berry_fix.gba"
 gMultiBootProgram_BerryGlitchFix_End::

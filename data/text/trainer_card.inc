@@ -1,167 +1,175 @@
 CeladonCity_GameCorner_Text_TryPokemonPrinter::
-	.string "It's a POKéMON PRINTER!\p"
-	.string "It can put a print of your POKéMON\n"
-	.string "on the back of your TRAINER CARD.\p"
-	.string "It costs only ¥50.\n"
-	.string "Would you like to try it?$"
+	.string "C'est une IMPRIMANTE POKéMON!\p"
+	.string "Elle peut imprimer des POKéMON\n"
+	.string "sur ta CARTE DRESSEUR.\p"
+	.string "Ça ne coûte que 50¥.\n"
+	.string "On essaie?$"
 
 CeladonCity_GameCorner_Text_DontHaveEnoughMoney::
-	.string "You don't have enough money.$"
+	.string "Pas assez d'argent…$"
 
 CeladonCity_GameCorner_Text_ChoosePrintType::
-	.string "Please choose the print type.$"
+	.string "Veuillez choisir le type\n"
+	.string "d'impression.$"
 
 CeladonCity_GameCorner_Text_BigSmileForPhoto::
-	.string "A big smile for the photo, please!\n"
-	.string "Three… Two… One…\p"
-	.string "Flash!$"
+	.string "Un joli sourire pour la photo!\n"
+	.string "Un… Deux… Et trois!$"
 
 CeladonCity_GameCorner_Text_PrintIsReadyCheckTrainerCard::
-	.string "Your POKéMON print is ready!\n"
-	.string "Check your TRAINER CARD.$"
+	.string "La CARTE DRESSEUR\n"
+	.string "est prête.$"
 
 FourIsland_House2_Text_WishICouldShowOffStickers::
-	.string "Giggle…\n"
-	.string "I collected a ton of STICKERS.\l"
-	.string "I wish I could show them off…$"
+	.string "J'ai réuni des tas de STICKERS.\p"
+	.string "J'ai trop envie de les montrer à\n"
+	.string "tout le monde…$"
 
 FourIsland_House2_Text_GiveYouStickerIfYouBrag::
 	.string "Oh, excellent!\n"
-	.string "You've come to the right place!\p"
-	.string "Look, look! See? See?\n"
-	.string "These are my STICKERS!\l"
-	.string "Look how many I got!\p"
-	.string "I bet you want some.\n"
-	.string "I bet you do!\p"
-	.string "I'll give a STICKER if you can tell\n"
-	.string "me something awesome about\l"
-	.string "yourself.\p"
-	.string "What will you brag about?$"
+	.string "Tu es au bon endroit!\p"
+	.string "Regarde! Tu vois, hein?\n"
+	.string "Tu vois?\p"
+	.string "C'est mes STICKERS!\n"
+	.string "J'en ai des tonnes.\p"
+	.string "J'suis sûr que tu voudrais\n"
+	.string "m'en prendre!\p"
+	.string "Je t'en donnerai un si tu\n"
+	.string "me racontes un truc\p"
+	.string "dingue sur toi.\p"
+	.string "Alors, qu'est-ce que tu\n"
+	.string "me racontes?$"
 
 FourIsland_House2_Text_BragAboutSomethingForMe::
-	.string "Brag about something for me.\n"
-	.string "I'll give you a STICKER.$"
+	.string "Raconte-moi un truc dingue et\n"
+	.string "je te donnerai un STICKER.$"
 
 FourIsland_House2_Text_BragAboutWhatToday::
-	.string "Oh, hi!\n"
-	.string "Here comes the braggart.\p"
-	.string "What are you going to brag about\n"
-	.string "today?$"
+	.string "Oh, Salut!\n"
+	.string "Tu viens encore te vanter?\p"
+	.string "Qu'est-ce que tu vas me\n"
+	.string "raconter aujourd'hui?$"
 
 FourIsland_House2_Text_WowHoFLowest::
-	.string "Oh, wow, you made it into the\n"
-	.string "HALL OF FAME.\p"
-	.string "That's pretty good, yup!\n"
-	.string "I'll give you one of these.$"
+	.string "Pfiuu, t'as pu entrer au PANTHEON.\n"
+	.string "Pas mal! Tiens, je te donne ça!$"
 
 FourIsland_House2_Text_WowHoFLow::
-	.string "Oh, wow, you've entered the\n"
-	.string "HALL OF FAME often!\p"
-	.string "That's impressive, yup!\n"
-	.string "I'll give you one of these.$"
+	.string "Pfiuu, t'as pu entrer au PANTHEON\n"
+	.string "plusieurs fois déjà.\p"
+	.string "Impressionnant!\n"
+	.string "Tiens, je te donne ça!$"
 
 FourIsland_House2_Text_WowHoFHigh::
-	.string "Whoa! You've made it into the\n"
-	.string "HALL OF FAME that often?\l"
-	.string "That's seriously incredible, yup!\p"
-	.string "You own the POKéMON LEAGUE!\n"
-	.string "I'll give you one of these.$"
+	.string "Waouh! Tu as pu entrer au\n"
+	.string "PANTHEON aussi souvent?\p"
+	.string "C'est vraiment incroyable. Ouais!\p"
+	.string "La LIGUE POKéMON ne doit plus\n"
+	.string "avoir de secrets pour toi.\p"
+	.string "Tiens, tu mérites ça!$"
 
 FourIsland_House2_Text_WowHoFHighest::
-	.string "No way! You've gone into the\n"
-	.string "HALL OF FAME that many times?\p"
-	.string "You're beyond incredible, yup!\n"
-	.string "That's it, I have to give you this.$"
+	.string "J'y crois pas! Personne ne peut\n"
+	.string "y entrer aussi souvent!\p"
+	.string "T'es vraiment incroyable!\n"
+	.string "Tiens, c'est pour toi!$"
 
 FourIsland_House2_Text_HoFStickerApplied::
-	.string "The HALL OF FAME STICKER was\n"
-	.string "applied to the TRAINER CARD.$"
+	.string "Le STICKER PANTHEON a été\n"
+	.string "ajouté à la CARTE DRESSEUR.$"
 
 FourIsland_House2_Text_ComeBackWithBetterStoryHoF::
 	.string "Hmm…\p"
-	.string "Come back with a better story next\n"
-	.string "time, okay?$"
+	.string "Reviens avec une meilleure\n"
+	.string "histoire la prochaine fois.$"
 
 FourIsland_House2_Text_LivingLegendHoF::
-	.string "Oh, no, no can do.\p"
-	.string "You're practically a living legend.\n"
-	.string "I have no SITCKERS left to give.$"
+	.string "Oh non, ça le fait pas!\p"
+	.string "T'es pratiquement une légende\n"
+	.string "vivante.\p"
+	.string "J'ai pas de STICKER digne de toi.$"
 
 FourIsland_House2_Text_WowEggsLowest::
-	.string "Oh, wow, there are POKéMON EGGS?\n"
-	.string "I didn't know that!\p"
-	.string "That's pretty good, yup!\n"
-	.string "I'll give you one of these.$"
+	.string "Waouh, c'est des OEUFS POKéMON?\n"
+	.string "J'en avais jamais vu!\p"
+	.string "Pas mal, pas mal!\n"
+	.string "Tiens, ça me fait plaisir.$"
 
 FourIsland_House2_Text_WowEggsLow::
-	.string "You've hatched that many EGGS?\n"
-	.string "You really must like them!\p"
-	.string "That's impressive, yup!\n"
-	.string "I'll give you one of these.$"
+	.string "Pfiu, t'as vraiment fait éclore\n"
+	.string "autant d'OEUFS?\p"
+	.string "C'est impressionnant, ouais!\n"
+	.string "Prends ça, tu le vaux bien!$"
 
 FourIsland_House2_Text_WowEggsHigh::
-	.string "Whoa! You've hatched a whole\n"
-	.string "bunch of EGGS!\p"
-	.string "You're an EGG-hatching machine!\n"
-	.string "I'll give you one of these.$"
+	.string "T'as vraiment fait éclore beaucoup\n"
+	.string "d'OEUFS!\p"
+	.string "Tu les couves ou quoi?\n"
+	.string "Tiens, tu mérites ça.$"
 
 FourIsland_House2_Text_WowEggsHighest::
-	.string "Wh… You hatched that many EGGS?\p"
-	.string "What's behind your love of EGGS?\n"
-	.string "It's beyond incredible, yup!\p"
-	.string "You're too awesome, I tell you.\n"
-	.string "That's it, I have to give you this.$"
+	.string "… Incroyable!\p"
+	.string "Qu'est-ce qui peut bien se\n"
+	.string "cacher derrière cet amour pour\p"
+	.string "les OEUFS?\n"
+	.string "C'est vraiment incroyable!\p"
+	.string "Tu m'impressionnes tellement\n"
+	.string "que je vais te donner ça.$"
 
 FourIsland_House2_Text_EggStickerApplied::
-	.string "The EGG STICKER was applied\n"
-	.string "to the TRAINER CARD.$"
+	.string "Le STICKER OEUF a été ajouté\n"
+	.string "à la CARTE DRESSEUR.$"
 
 FourIsland_House2_Text_ComeBackWithBetterStoryEggs::
-	.string "Hmm…\p"
-	.string "Come back with a better story next\n"
-	.string "time, okay?$"
+	.string "Hum…\p"
+	.string "Reviens avec une meilleure\n"
+	.string "histoire, OK?$"
 
 FourIsland_House2_Text_LivingLegendEggs::
-	.string "Oh, no, no can do.\p"
-	.string "You're practically a living legend.\n"
-	.string "I have no SITCKERS left to give.$"
+	.string "Oh non, ça le fait pas!\p"
+	.string "T'es pratiquement une légende\n"
+	.string "vivante.\p"
+	.string "J'ai pas de STICKER digne de toi.$"
 
 FourIsland_House2_Text_WowLinkWinsLowest::
-	.string "Oh, wow, you've had success\n"
-	.string "link battling?\p"
-	.string "You're pretty strong, yup!\n"
-	.string "I'll give you one of these.$"
+	.string "Hum, tu te défends pas mal en\n"
+	.string "combat en link.\p"
+	.string "Tiens, je te donne ça pour\n"
+	.string "la peine.$"
 
 FourIsland_House2_Text_WowLinkWinsLow::
-	.string "You've beaten your friends a lot\n"
-	.string "link battling, huh?\p"
-	.string "You're impressively strong, yup!\n"
-	.string "I'll give you one of these.$"
+	.string "Tu as déjà battu pas mal de tes\n"
+	.string "amis en combat en link\p"
+	.string "à ce que je vois.\p"
+	.string "Tu m'impressionnes.\n"
+	.string "Tiens, c'est pour toi.$"
 
 FourIsland_House2_Text_WowLinkWinsHigh::
-	.string "Whoa! You've beaten your friends\n"
-	.string "a frightful number of times.\p"
-	.string "Have you lost friends over this?\n"
-	.string "I'll give you one of these.$"
+	.string "Waouh, tu as battu tes amis un\n"
+	.string "nombre incroyable de fois.\p"
+	.string "Ils vont finir par t'en vouloir…\n"
+	.string "Tiens, c'est pour toi!$"
 
 FourIsland_House2_Text_WowLinkWinsHighest::
-	.string "Wh… Wickedly whoa!\n"
-	.string "You've won mind-blowingly often!\p"
-	.string "It just knocks me out thinking\n"
-	.string "about how tough you are.\p"
-	.string "You're the stuff of nightmares!\n"
-	.string "That's it, I have to give you this.$"
+	.string "C'est diiiingue! Comment tu fais\n"
+	.string "pour gagner autant?\p"
+	.string "J'suis trop fier de connaître\n"
+	.string "quelqu'un comme toi!\p"
+	.string "Tu dois être un vrai cauchemar\n"
+	.string "pour les autres DRESSEURS!\p"
+	.string "Tiens, accepte ça de ma part!$"
 
 FourIsland_House2_Text_VictoryStickerApplied::
-	.string "The VICTORY STICKER was applied\n"
-	.string "to the TRAINER CARD.$"
+	.string "Le STICKER VICTOIRE a été\n"
+	.string "ajouté à la CARTE DRESSEUR.$"
 
 FourIsland_House2_Text_ComeBackWithBetterStoryLinkWins::
-	.string "Hmm…\p"
-	.string "Come back with a better story next\n"
-	.string "time, okay?$"
+	.string "Hum…\p"
+	.string "Reviens avec une meilleure\n"
+	.string "histoire, OK?$"
 
 FourIsland_House2_Text_LivingLegendLinkWins::
-	.string "Oh, no, no can do.\p"
-	.string "You're practically a living legend.\n"
-	.string "I have no SITCKERS left to give.$"
+	.string "Oh non, ça le fait pas!\p"
+	.string "T'es pratiquement une légende\n"
+	.string "vivante.\p"
+	.string "J'ai pas de STICKER digne de toi.$"

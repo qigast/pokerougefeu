@@ -805,26 +805,26 @@ gStdScriptsEnd::
 	.include "data/maps/SixIsland_WaterPath_House2/text_fr.inc"
 	.include "data/maps/SevenIsland_SevaultCanyon_House/text_fr.inc"
 
-	.include "data/scripts/french/std_msgbox.inc"
-	.include "data/scripts/french/trainer_battle.inc"
-	.include "data/text/french/mix_record.inc"
-	.include "data/text/french/pc.inc"
-	.include "data/text/french/cable_club.inc"
-	.include "data/text/french/obtain_item.inc"
-	.include "data/text/french/pokemon_center.inc"
-	.include "data/text/french/surf.inc"
-	.include "data/text/french/wireless_club.inc"	
-	.include "data/text/french/itemfinder.inc"
-	.include "data/text/french/route23.inc"
-	.include "data/text/french/aide.inc"
-	.include "data/text/french/ingame_trade.inc"
-	.include "data/text/french/pokedex_rating_2.inc"
-	.include "data/text/french/pc_transfer.inc"
-	.include "data/text/french/white_out.inc"
-	.include "data/text/french/poke_mart.inc"
-	.include "data/text/french/general.inc"
-	.include "data/text/french/seagallop.inc"
-	.include "data/text/french/legendary_cry.inc"
+	.include "data/scripts/std_msgbox.inc"
+	.include "data/scripts/trainer_battle.inc"
+	.include "data/text/mix_record.inc"
+	.include "data/text/pc.inc"
+	.include "data/text/cable_club.inc"
+	.include "data/text/obtain_item.inc"
+	.include "data/text/pokemon_center.inc"
+	.include "data/text/surf.inc"
+	.include "data/text/wireless_club.inc"	
+	.include "data/text/itemfinder.inc"
+	.include "data/text/route23.inc"
+	.include "data/text/aide.inc"
+	.include "data/text/ingame_trade.inc"
+	.include "data/text/pokedex_rating_2.inc"
+	.include "data/text/pc_transfer.inc"
+	.include "data/text/white_out.inc"
+	.include "data/text/poke_mart.inc"
+	.include "data/text/general.inc"
+	.include "data/text/seagallop.inc"
+	.include "data/text/legendary_cry.inc"
 
 EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_OAK_IN_HIS_LAB
@@ -879,10 +879,10 @@ EventScript_ResetAllMapFlags::
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 500
 	end
 
-	.include "data/scripts/french/hall_of_fame.inc"
-	.include "data/scripts/french/pkmn_center_nurse.inc"
-	.include "data/scripts/french/obtain_item.inc"
-	.include "data/scripts/french/pc.inc"
+	.include "data/scripts/hall_of_fame.inc"
+	.include "data/scripts/pkmn_center_nurse.inc"
+	.include "data/scripts/obtain_item.inc"
+	.include "data/scripts/pc.inc"
 
 Common_ShowEasyChatScreen::
 	fadescreen FADE_TO_BLACK
@@ -890,9 +890,9 @@ Common_ShowEasyChatScreen::
 	fadescreen FADE_FROM_BLACK
 	return
 
-	.include "data/scripts/french/surf.inc"
-	.include "data/scripts/french/set_gym_trainers.inc"
-	.include "data/scripts/french/bag_full.inc"
+	.include "data/scripts/surf.inc"
+	.include "data/scripts/set_gym_trainers.inc"
+	.include "data/scripts/bag_full.inc"
 
 @ Unused
 EventScript_GymBadgeFanfare::
@@ -918,9 +918,9 @@ EventScript_WallTownMap::
 	releaseall
 	end
 
-	.include "data/text/french/pokedex_rating.inc"
-	.include "data/scripts/french/pokedex_rating.inc"
-	.include "data/scripts/french/cave_of_origin.inc"
+	.include "data/text/pokedex_rating.inc"
+	.include "data/scripts/pokedex_rating.inc"
+	.include "data/scripts/cave_of_origin.inc"
 
 EventScript_ChangePokemonNickname::
 	fadescreen FADE_TO_BLACK
@@ -938,10 +938,10 @@ EventScript_HandOverItem::
 	removeitem VAR_0x8004
 	return
 
-	.include "data/scripts/french/pokemon_league.inc"
-	.include "data/scripts/french/movement.inc"	
-	.include "data/scripts/french/flavor_text.inc"
-	.include "data/scripts/french/questionnaire.inc"
+	.include "data/scripts/pokemon_league.inc"
+	.include "data/scripts/movement.inc"	
+	.include "data/scripts/flavor_text.inc"
+	.include "data/scripts/questionnaire.inc"
 
 EventScript_BagItemCanBeRegistered::
 	msgbox Text_BagItemCanBeRegistered, MSGBOX_SIGN
@@ -971,13 +971,13 @@ EventScript_SetEnteringCyclingRoad::
 	releaseall
 	end
 
-	.include "data/scripts/french/route23.inc"
+	.include "data/scripts/route23.inc"
 
 EventScript_GetElevatorFloor::
 	special GetElevatorFloor
 	return
 
-	.include "data/scripts/french/aide.inc"
+	.include "data/scripts/aide.inc"
 
 EventScript_CancelMessageBox::
 	special DoPicboxCancel
@@ -988,7 +988,7 @@ EventScript_ReleaseEnd::
 	release
 	end
 
-	.include "data/scripts/french/pokemon_mansion.inc"
+	.include "data/scripts/pokemon_mansion.inc"
 
 @ Unused
 EventScript_DelayedLookAround::
@@ -1008,8 +1008,8 @@ EventScript_DelayedLookAround::
 	releaseall
 	end
 
-	.include "data/scripts/french/silphco_doors.inc"
-	.include "data/scripts/french/pc_transfer.inc"
+	.include "data/scripts/silphco_doors.inc"
+	.include "data/scripts/pc_transfer.inc"
 
 EventScript_GetInGameTradeSpeciesInfo::
 	copyvar VAR_0x8004, VAR_0x8008
@@ -1077,8 +1077,8 @@ VermilionCity_PokemonCenter_1F_EventScript_ExplainVSSeeker::
 	release
 	end
 
-	.include "data/scripts/french/itemfinder.inc"
-	.include "data/scripts/french/white_out.inc"
+	.include "data/scripts/itemfinder.inc"
+	.include "data/scripts/white_out.inc"
 
 Std_PutItemAway::
 	bufferitemnameplural STR_VAR_2, VAR_0x8000, VAR_0x8001
@@ -1116,8 +1116,8 @@ EventScript_BufferPutAwayPocketBerryPouch::
 	bufferstdstring STR_VAR_3, STDSTRING_BERRY_POUCH
 	return
 
-	.include "data/scripts/french/seagallop.inc"
-	.include "data/scripts/french/static_pokemon.inc"
+	.include "data/scripts/seagallop.inc"
+	.include "data/scripts/static_pokemon.inc"
 
 EventScript_TryDarkenRuins::
 	goto_if_set FLAG_SYS_UNLOCKED_TANOBY_RUINS, EventScript_Return
@@ -1139,8 +1139,8 @@ EventScript_NoMoreRoomForPokemon::
 	release
 	end
 
-	.include "data/text/french/braille.inc"
-	.include "data/scripts/french/trainers.inc"
+	.include "data/text/braille.inc"
+	.include "data/scripts/trainers.inc"
 
 @ Test message!
 @ Welcome to the world of Pokémon!
@@ -1148,31 +1148,31 @@ Text_TestMsg::
 	.string "テストよう　メッセージです！\n"
 	.string "ポケモンの　せかいへ　ようこそ！$"
 
-	.include "data/scripts/french/fame_checker.inc"
-	.include "data/text/french/fame_checker.inc"
-	.include "data/text/french/sign_lady.inc"
-	.include "data/text/french/trainer_card.inc"
-	.include "data/scripts/french/trainer_card.inc"
-	.include "data/text/french/help_system.inc"
-	.include "data/scripts/french/cable_club.inc"
-	.include "data/scripts/french/field_moves.inc"
-	.include "data/scripts/french/item_ball_scripts.inc"
-	.include "data/scripts/french/mystery_event_club.inc"
-	.include "data/scripts/french/day_care.inc"
-	.include "data/text/french/day_care.inc"
-	.include "data/scripts/french/flash.inc"
-	.include "data/scripts/french/repel.inc"
-	.include "data/scripts/french/safari_zone.inc"
-	.include "data/text/french/safari_zone.inc"
-	.include "data/text/french/competitive_brothers.inc"
-	.include "data/text/french/eon_ticket.inc"
-	.include "data/text/french/berries.inc"
-	.include "data/text/french/flavor_text.inc"
-	.include "data/scripts/french/hole.inc"
-	.include "data/text/french/trainers.inc"
-	.include "data/scripts/french/move_tutors.inc"
-	.include "data/scripts/french/trainer_tower.inc"
-	.include "data/scripts/french/test.inc"
-	.include "data/text/french/save.inc"
-	.include "data/text/french/new_game_intro.inc"
-	.include "data/text/french/pokedude.inc"
+	.include "data/scripts/fame_checker.inc"
+	.include "data/text/fame_checker.inc"
+	.include "data/text/sign_lady.inc"
+	.include "data/text/trainer_card.inc"
+	.include "data/scripts/trainer_card.inc"
+	.include "data/text/help_system.inc"
+	.include "data/scripts/cable_club.inc"
+	.include "data/scripts/field_moves.inc"
+	.include "data/scripts/item_ball_scripts.inc"
+	.include "data/scripts/mystery_event_club.inc"
+	.include "data/scripts/day_care.inc"
+	.include "data/text/day_care.inc"
+	.include "data/scripts/flash.inc"
+	.include "data/scripts/repel.inc"
+	.include "data/scripts/safari_zone.inc"
+	.include "data/text/safari_zone.inc"
+	.include "data/text/competitive_brothers.inc"
+	.include "data/text/eon_ticket.inc"
+	.include "data/text/berries.inc"
+	.include "data/text/flavor_text.inc"
+	.include "data/scripts/hole.inc"
+	.include "data/text/trainers.inc"
+	.include "data/scripts/move_tutors.inc"
+	.include "data/scripts/trainer_tower.inc"
+	.include "data/scripts/test.inc"
+	.include "data/text/save.inc"
+	.include "data/text/new_game_intro.inc"
+	.include "data/text/pokedude.inc"

@@ -1,26 +1,29 @@
 gText_WouldYouLikeToSaveTheGame::
-	.string "Would you like to save the game?$"
+	.string "Voulez-vous sauvegarder la partie?$"
 
 gText_AlreadySaveFile_WouldLikeToOverwrite::
-	.string "There is already a saved file.\n"
-	.string "Is it okay to overwrite it?$"
+	.string "Il y a déjà une sauvegarde.\n"
+	.string ""
+	.string "Voulez-vous la remplacer?$"
 
 gText_SavingDontTurnOffThePower::
-	.string "SAVING…\n"
-	.string "DON'T TURN OFF THE POWER.$"
+	.string "SAUVEGARDE EN COURS…\n"
+	.string ""
+	.string "N'ETEIGNEZ PAS LA CONSOLE.$"
 
 gText_PlayerSavedTheGame::
-	.string "{PLAYER} saved the game.$"
+	.string "{PLAYER} a sauvegardé la partie.$"
 
 gText_SaveFailed2::
 	.string "セーブに　しっぱい　しました‥$"
 
 gText_DifferentGameFile::
-	.string "WARNING!\p"
-	.string "There is a different game file that\n"
-	.string "is already saved.\p"
-	.string "If you save now, the other file's\n"
-	.string "adventure, including items and\l"
-	.string "POKéMON, will be entirely lost.\p"
-	.string "Are you sure you want to save now\n"
-	.string "and overwrite the other save file?$"
+	.string "ATTENTION!\p"
+	.string "Une autre partie est déjà\n"
+	.string "sauvegardée.\p"
+	.string "Si vous sauvegardez maintenant,\n"
+	.string "l'aventure, les objets et les\p"
+	.string "POKéMON de l'autre fichier\n"
+	.string "seront perdus.\p"
+	.string "Etes-vous sûr de vouloir écraser\n"
+	.string "l'autre fichier?$"
