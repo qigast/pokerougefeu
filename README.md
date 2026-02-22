@@ -1,13 +1,11 @@
-# Pokémon FireRed and LeafGreen
+# Pokémon - Version Rouge Feu & Version Vert Feuille
 
-This is a decompilation of English Pokémon FireRed and LeafGreen.
+This is a decompilation of Pokémon - Version Rouge Feu and Pokémon - Version Vert Feuille. The original decompilation of both versions was done by Acimut, this is a fork that keeps it up to date with the "main" pokefirered repository, and that also isolates the French version.
 
-It builds the following ROM images:
+It builds the following ROMs:
 
-* [**pokefirered.gba**](https://datomatic.no-intro.org/?page=show_record&s=23&n=1616) `sha1: 41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc`
-* [**pokeleafgreen.gba**](https://datomatic.no-intro.org/?page=show_record&s=23&n=1617) `sha1: 574fa542ffebb14be69902d1d36f1ec0a4afd71e`
-* [**pokefirered_rev1.gba**](https://datomatic.no-intro.org/?page=show_record&s=23&n=1672) `sha1: dd5945db9b930750cb39d00c84da8571feebf417`
-* [**pokeleafgreen_rev1.gba**](https://datomatic.no-intro.org/index.php?page=show_record&s=23&n=1668) `sha1: 7862c67bdecbe21d1d69ce082ce34327e1c6ed5e`
+* [**pokerougefeu.gba**](https://datomatic.no-intro.org/index.php?page=show_record&s=23&n=1658) `sha1: fc663907256f06a3a09e2d6b967bc9af4919f111`
+* [**pokevertfeuille.gba**](https://datomatic.no-intro.org/index.php?page=show_record&s=23&n=1659) `sha1: 4b5758c14d0a07b70ef3ef0bd7fa5e7ce6978672`
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
