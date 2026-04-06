@@ -140,6 +140,17 @@ static void PokeSum_UpdateMonMarkingsAnim(void);
 static s8 SeekToNextMonInSingleParty(s8 direction);
 static s8 SeekToNextMonInMultiParty(s8 direction);
 
+enum EggOriginTexts {
+    EGG_ORIGIN_TEXT_DAYCARE,
+    EGG_ORIGIN_TEXT_TRADE,
+    EGG_ORIGIN_TEXT_TRAVELING_MAN,
+    EGG_ORIGIN_TEXT_TRADE_2,
+    EGG_ORIGIN_TEXT_NICE_PLACE,
+    EGG_ORIGIN_TEXT_SPA,
+    EGG_ORIGIN_TEXT_TRADE_3,
+    NUM_EGG_ORIGIN_TEXTS,
+};
+
 struct PokemonSummaryScreenData
 {
     u16 bg1TilemapBuffer[0x800];
@@ -632,7 +643,7 @@ static const u8 *const sEggHatchTimeTexts[] = {
     gText_PokeSum_EggHatch_AlmostReady
 };
 
-static const u8 *const sEggOriginTexts[] = {
+static const u8 *const sEggOriginTexts[NUM_EGG_ORIGIN_TEXTS] = {
     gText_PokeSum_EggOrigin_DayCare,      
     gText_PokeSum_EggOrigin_Trade,
     gText_PokeSum_EggOrigin_TravelingMan, 
@@ -2790,24 +2801,24 @@ static void PokeSum_PrintTrainerMemo_Egg(void)
 {
     u8 metLocation;
     u8 version;
-    u8 chosenStrIndex = 0;
+    u8 chosenStrIndex = EGG_ORIGIN_TEXT_DAYCARE;
 
     metLocation = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_LOCATION);
 
     if (sMonSummaryScreen->monList.mons != gEnemyParty)
     {
         if (metLocation == METLOC_FATEFUL_ENCOUNTER || GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MODERN_FATEFUL_ENCOUNTER) == TRUE)
-            chosenStrIndex = 4;
+            chosenStrIndex = EGG_ORIGIN_TEXT_NICE_PLACE;
         else
         {
             version = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_GAME);
 
             if (version != VERSION_LEAF_GREEN && version != VERSION_FIRE_RED)
-                chosenStrIndex = 1;
+                chosenStrIndex = EGG_ORIGIN_TEXT_TRADE;
             else if (metLocation == METLOC_SPECIAL_EGG)
-                chosenStrIndex = 2;
+                chosenStrIndex = EGG_ORIGIN_TEXT_TRAVELING_MAN;
 
-            if (chosenStrIndex == 0 || chosenStrIndex == 2)
+            if (chosenStrIndex == EGG_ORIGIN_TEXT_DAYCARE || chosenStrIndex == EGG_ORIGIN_TEXT_TRAVELING_MAN)
                 if (PokeSum_BufferOtName_IsEqualToCurrentOwner(&sMonSummaryScreen->currentMon) == FALSE)
                     chosenStrIndex++;
         }
@@ -2815,7 +2826,7 @@ static void PokeSum_PrintTrainerMemo_Egg(void)
     else
     {
         if (metLocation == METLOC_FATEFUL_ENCOUNTER || GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MODERN_FATEFUL_ENCOUNTER) == TRUE)
-            chosenStrIndex = 4;
+            chosenStrIndex = EGG_ORIGIN_TEXT_NICE_PLACE;
         else
         {
             version = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_GAME);
@@ -2823,10 +2834,10 @@ static void PokeSum_PrintTrainerMemo_Egg(void)
             if (version != VERSION_LEAF_GREEN && version != VERSION_FIRE_RED)
             {
                 if (metLocation == METLOC_SPECIAL_EGG)
-                    chosenStrIndex = 5;
+                    chosenStrIndex = EGG_ORIGIN_TEXT_SPA;
             }
             else if (metLocation == METLOC_SPECIAL_EGG)
-                chosenStrIndex = 2;
+                chosenStrIndex = EGG_ORIGIN_TEXT_TRAVELING_MAN;
 
             if (PokeSum_BufferOtName_IsEqualToCurrentOwner(&sMonSummaryScreen->currentMon) == FALSE)
                 chosenStrIndex++;
@@ -2834,7 +2845,7 @@ static void PokeSum_PrintTrainerMemo_Egg(void)
     }
 
     if (sMonSummaryScreen->isBadEgg)
-        chosenStrIndex = 0;
+        chosenStrIndex = EGG_ORIGIN_TEXT_DAYCARE;
 
     AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], FONT_NORMAL, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sEggOriginTexts[chosenStrIndex]);
 }
