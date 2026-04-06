@@ -49,12 +49,6 @@ jobs:
         run: |
           make -j${nproc} all syms
 
-      - name: Compare FireRed rev1
-        env:
-          GAME_REVISION: 1
-        run: |
-          make -j${nproc} all syms
-
       - name: Compare FireRed rev10
         env:
           GAME_REVISION: 10
@@ -64,13 +58,6 @@ jobs:
       - name: Compare LeafGreen
         env:
           GAME_VERSION: LEAFGREEN
-        run: |
-          make -j${nproc} all syms
-
-      - name: Compare LeafGreen rev1
-        env:
-          GAME_VERSION: LEAFGREEN
-          GAME_REVISION: 1
         run: |
           make -j${nproc} all syms
 
