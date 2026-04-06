@@ -17,30 +17,30 @@ SECTIONS {
 
         . = 0x1C000;
 
-        INCLUDE "sym_ewram.ld"
+        INCLUDE "sym_ewram_rev10.ld"
         src/*.o(ewram_data);
 
-        /* *libc.a:impure.o(.data);
+        *libc.a:impure.o(.data);
         *libc.a:locale.o(.data);
-        *libc.a:mallocr.o(.data); */
+        *libc.a:mallocr.o(.data);
     } > EWRAM
 
     iwram 0x3000000 (NOLOAD) :
     ALIGN(4)
     {
         /* .bss starts at 0x3000000 */
-        INCLUDE "sym_bss.ld"
+        INCLUDE "sym_bss_rev10.ld"
         src/*.o(.bss);
         data/*.o(.bss);
 
-        /* .bss.code starts at 0x3002830 */
+        /* .bss.code starts at 0x30028E0 */
         src/m4a.o(.bss.code);
 
-        /* COMMON starts at 0x3003030 */
-        INCLUDE "sym_common.ld"
+        /* COMMON starts at 0x30030E0 */
+        INCLUDE "sym_common_rev10.ld"
         src/*.o(COMMON);
 
-        /* *libc.a:sbrkr.o(COMMON); */
+        *libc.a:sbrkr.o(COMMON);
         end = .;
     } > IWRAM
 
@@ -62,6 +62,8 @@ SECTIONS {
         src/window.o(.text);
         src/blit.o(.text);
         src/window_8bpp.o(.text);
+        src/librfu_stwi.o(.text);
+        src/librfu_rfu.o(.text);
         src/text.o(.text);
         src/sprite.o(.text);
         src/sloopsvc.o(.text);
@@ -335,10 +337,8 @@ SECTIONS {
         src/agb_flash_1m.o(.text);
         src/agb_flash_mx.o(.text);
         src/agb_flash_le.o(.text);
-        src/librfu_stwi.o(.text);
-        src/librfu_intr.o(.text);
-        src/librfu_rfu.o(.text);
         src/librfu_sio32id.o(.text);
+        src/librfu_intr.o(.text);
         src/isagbprn.o(.text);
         src/libagbsyscall.o(.text);
         *libgcc.a:_call_via_rX.o(.text);
@@ -380,7 +380,7 @@ SECTIONS {
         *libc.a:mprec.o(.text);
         *libc.a:s_isinf.o(.text);
         *libc.a:s_isnan.o(.text);
-        /* *libc.a:sbrkr.o(.text); */
+        *libc.a:sbrkr.o(.text);
         *libc.a:stdio.o(.text);
         *libc.a:strlen.o(.text);
         *libc.a:syscalls.o(.text);
@@ -403,6 +403,7 @@ SECTIONS {
         src/malloc.o(.rodata.str1.4);
         src/text_printer.o(.rodata);
         src/window.o(.rodata);
+        src/librfu_rfu.o(.rodata);
         src/text.o(.rodata);
         src/sprite.o(.rodata);
         src/bg_regs.o(.rodata);
@@ -974,7 +975,6 @@ SECTIONS {
         src/agb_flash_1m.o(.rodata);
         src/agb_flash_mx.o(.rodata);
         src/agb_flash_le.o(.rodata);
-        src/librfu_rfu.o(.rodata);
         src/librfu_sio32id.o(.rodata);
         src/isagbprn.o(.rodata);
         *libgcc.a:_divdi3.o(.rodata);
@@ -1004,7 +1004,7 @@ SECTIONS {
         *libc.a:mprec.o(.rodata);
         *libc.a:s_isinf.o(.rodata);
         *libc.a:s_isnan.o(.rodata);
-        *libc.a:sbrkr.o(.rodata); /*why ?*/
+        *libc.a:sbrkr.o(.rodata);
         *libc.a:stdio.o(.rodata);
         *libc.a:strlen.o(.rodata);
         *libc.a:syscalls.o(.rodata);
@@ -1042,24 +1042,11 @@ SECTIONS {
         data/*.o(.rodata);
     } > ROM =0
 
-    /* DWARF debug sections.
-       Symbols in the DWARF debugging sections are relative to the beginning
-       of the section so we begin them at 0.  */
 
-    /* DWARF 1 */
-    .debug          0 : { *(.debug) }
-    .line           0 : { *(.line) }
-
-    /* GNU DWARF 1 extensions */
-    .debug_srcinfo  0 : { *(.debug_srcinfo) }
-    .debug_sfnames  0 : { *(.debug_sfnames) }
-
-    /* DWARF 1.1 and DWARF 2 */
+    /* DWARF 2 sections */
     .debug_aranges  0 : { *(.debug_aranges) }
     .debug_pubnames 0 : { *(.debug_pubnames) }
-
-    /* DWARF 2 */
-    .debug_info     0 : { *(.debug_info .gnu.linkonce.wi.*) }
+    .debug_info     0 : { *(.debug_info) }
     .debug_abbrev   0 : { *(.debug_abbrev) }
     .debug_line     0 : { *(.debug_line) }
     .debug_frame    0 : { *(.debug_frame) }

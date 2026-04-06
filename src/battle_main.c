@@ -1160,7 +1160,11 @@ static void CB2_PreInitMultiBattle(void)
         }
         break;
     case 2:
+#if REVISION >= 0xA
+        if (IsLinkTaskFinished() && !gPaletteFade.active)
+#else
         if (!gPaletteFade.active)
+#endif
         {
             gBattleCommunication[MULTIUSE_STATE]++;
             if (gWirelessCommType)
@@ -3923,7 +3927,7 @@ static void ReturnFromBattleToOverworld(void)
         if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
         {
             UpdateRoamerHPStatus(&gEnemyParty[0]);
-#ifdef BUGFIX
+#if defined(BUGFIX) || REVISION >= 0xA
             if ((gBattleOutcome == B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT || gBattleOutcome == B_OUTCOME_DREW)
 #else
             if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT) // Bug: When Roar is used by roamer, gBattleOutcome is B_OUTCOME_PLAYER_TELEPORTED (5).

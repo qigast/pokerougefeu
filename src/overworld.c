@@ -1283,7 +1283,7 @@ static const int sUnusedData[] = {
       44
 };
 
-const struct Coords32 gDirectionToVectors[] = 
+const struct Coords32 gDirectionToVectors[] =
 {
     [DIR_NONE]      = { 0,  0},
     [DIR_SOUTH]     = { 0,  1},
@@ -1516,6 +1516,13 @@ static bool8 RunFieldCallback(void)
 
     return TRUE;
 }
+
+#if REVISION >= 0xA
+void ClearFieldCallback(void)
+{
+    gFieldCallback = NULL;
+}
+#endif
 
 void CB2_NewGame(void)
 {
