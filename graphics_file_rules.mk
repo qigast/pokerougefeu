@@ -51,19 +51,19 @@ $(CASTFORMGFXDIR)/shiny.gbapal: $(CASTFORMGFXDIR)/normal/shiny.gbapal \
 									$(CASTFORMGFXDIR)/snowy/shiny.gbapal
 	@cat $^ >$@
 
-$(FONTGFXDIR)/latin_small.latfont: $(FONTGFXDIR)/latin_small.png
+$(FONTGFXDIR)/latin_small.hwlatfont: $(FONTGFXDIR)/latin_small.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_small_es.latfont: $(FONTGFXDIR)/latin_small_es.png
+$(FONTGFXDIR)/latin_small_es.hwlatfont: $(FONTGFXDIR)/latin_small_es.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_small_it.latfont: $(FONTGFXDIR)/latin_small_it.png
+$(FONTGFXDIR)/latin_small_it.hwlatfont: $(FONTGFXDIR)/latin_small_it.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_small_fr.latfont: $(FONTGFXDIR)/latin_small_fr.png
+$(FONTGFXDIR)/latin_small_fr.hwlatfont: $(FONTGFXDIR)/latin_small_fr.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_small_de.latfont: $(FONTGFXDIR)/latin_small_de.png
+$(FONTGFXDIR)/latin_small_de.hwlatfont: $(FONTGFXDIR)/latin_small_de.png
 	$(GFX) $< $@
 
 $(FONTGFXDIR)/japanese_small.fwjpnfont: $(FONTGFXDIR)/japanese_small.png
@@ -72,55 +72,55 @@ $(FONTGFXDIR)/japanese_small.fwjpnfont: $(FONTGFXDIR)/japanese_small.png
 $(FONTGFXDIR)/japanese_tall.fwjpnfont: $(FONTGFXDIR)/japanese_tall.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_normal.latfont: $(FONTGFXDIR)/latin_normal.png
+$(FONTGFXDIR)/latin_normal.fwlatfont: $(FONTGFXDIR)/latin_normal.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_normal_es.latfont: $(FONTGFXDIR)/latin_normal_es.png
+$(FONTGFXDIR)/latin_normal_es.fwlatfont: $(FONTGFXDIR)/latin_normal_es.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_normal_it.latfont: $(FONTGFXDIR)/latin_normal_it.png
+$(FONTGFXDIR)/latin_normal_it.fwlatfont: $(FONTGFXDIR)/latin_normal_it.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_normal_fr.latfont: $(FONTGFXDIR)/latin_normal_fr.png
+$(FONTGFXDIR)/latin_normal_fr.fwlatfont: $(FONTGFXDIR)/latin_normal_fr.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_normal_de.latfont: $(FONTGFXDIR)/latin_normal_de.png
+$(FONTGFXDIR)/latin_normal_de.fwlatfont: $(FONTGFXDIR)/latin_normal_de.png
 	$(GFX) $< $@
 
 $(FONTGFXDIR)/japanese_normal.fwjpnfont: $(FONTGFXDIR)/japanese_normal.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_male.latfont: $(FONTGFXDIR)/latin_male.png
+$(FONTGFXDIR)/latin_male.fwlatfont: $(FONTGFXDIR)/latin_male.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_male_es.latfont: $(FONTGFXDIR)/latin_male_es.png
+$(FONTGFXDIR)/latin_male_es.fwlatfont: $(FONTGFXDIR)/latin_male_es.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_male_it.latfont: $(FONTGFXDIR)/latin_male_it.png
+$(FONTGFXDIR)/latin_male_it.fwlatfont: $(FONTGFXDIR)/latin_male_it.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_male_fr.latfont: $(FONTGFXDIR)/latin_male_fr.png
+$(FONTGFXDIR)/latin_male_fr.fwlatfont: $(FONTGFXDIR)/latin_male_fr.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_male_de.latfont: $(FONTGFXDIR)/latin_male_de.png
+$(FONTGFXDIR)/latin_male_de.fwlatfont: $(FONTGFXDIR)/latin_male_de.png
 	$(GFX) $< $@
 
 $(FONTGFXDIR)/japanese_male.fwjpnfont: $(FONTGFXDIR)/japanese_male.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_female.latfont: $(FONTGFXDIR)/latin_female.png
+$(FONTGFXDIR)/latin_female.fwlatfont: $(FONTGFXDIR)/latin_female.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_female_es.latfont: $(FONTGFXDIR)/latin_female_es.png
+$(FONTGFXDIR)/latin_female_es.fwlatfont: $(FONTGFXDIR)/latin_female_es.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_female_it.latfont: $(FONTGFXDIR)/latin_female_it.png
+$(FONTGFXDIR)/latin_female_it.fwlatfont: $(FONTGFXDIR)/latin_female_it.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_female_fr.latfont: $(FONTGFXDIR)/latin_female_fr.png
+$(FONTGFXDIR)/latin_female_fr.fwlatfont: $(FONTGFXDIR)/latin_female_fr.png
 	$(GFX) $< $@
 
-$(FONTGFXDIR)/latin_female_de.latfont: $(FONTGFXDIR)/latin_female_de.png
+$(FONTGFXDIR)/latin_female_de.fwlatfont: $(FONTGFXDIR)/latin_female_de.png
 	$(GFX) $< $@
 
 $(FONTGFXDIR)/japanese_female.fwjpnfont: $(FONTGFXDIR)/japanese_female.png
